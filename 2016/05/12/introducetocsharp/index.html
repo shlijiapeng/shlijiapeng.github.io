@@ -1,0 +1,913 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="C#," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="C#概述选修课结课论文，just for fun.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introduce To C#">
+<meta property="og:url" content="http://www.shlijiapeng.com/2016/05/12/introducetocsharp/index.html">
+<meta property="og:site_name" content="shlijiapeng's Blog">
+<meta property="og:description" content="C#概述选修课结课论文，just for fun.">
+<meta property="og:updated_time" content="2016-05-12T16:46:59.253Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Introduce To C#">
+<meta name="twitter:description" content="C#概述选修课结课论文，just for fun.">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Introduce To C# | shlijiapeng's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">shlijiapeng's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Introduce To C#
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-12T23:30:58+08:00" content="2016-05-12">
+              2016-05-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="C-概述"><a href="#C-概述" class="headerlink" title="C#概述"></a>C#概述</h1><p>选修课结课论文，just for fun.<br><a id="more"></a></p>
+<h2 id="面向对象程序设计概述"><a href="#面向对象程序设计概述" class="headerlink" title="面向对象程序设计概述"></a>面向对象程序设计概述</h2><h3 id="面向过程程序设计的来由"><a href="#面向过程程序设计的来由" class="headerlink" title="面向过程程序设计的来由"></a>面向过程程序设计的来由</h3><p>　　要解释面向对象程序设计，都应当将其与面向过程程序设计作对比。<br>　　面向过程程序设计往往是流程化的，以机械式思维来解决问题，同时要求程序员的思维模式偏向硬件，从机械的角度来考虑如何一步步解决问题。<br>然而随着计算机科学、网络以及信息技术的发展，这种编程思维越发力不从心。这意味着在开发大型软件项目时，面向过程程序设计往往显得力不从心，程序员不得不开发一个个模块来完成功能，代码复用率低下、研发周期长、软件工作效率低下等等。<br>　　因此为了适应现代社会对软件开发的更高需求，面向对象程序设计作为解决方案而兴起。<br>　　面向对象的核心思想为万物皆对象。这种思想十分接近于人类思维方式，而不像面向过程程序设计那样程序员不得不从机器的角度来思考问题。<br>　　同时面向对象导入了类与对象的思想。类就是特定拥有共同属性、特征的对象的集合，对象则是类的实例，它实现了类的属性、特征等等。这和现实世界中是非常贴近的，比如鸟可以作为一种类，而乌鸦和喜鹊都可以作为鸟类的对象，他们共同拥有鸟类的属性——翅膀、飞翔等等。然而它们之间却也有不同的属性，比如乌鸦拥有全黑的羽毛，而喜鹊却不是，这就涉及到继承与子类了。<br>　　由此，面向对象程序设计产生并且不断发展壮大，成为或不可缺的一部分。</p>
+<h3 id="典型的面向对象语言"><a href="#典型的面向对象语言" class="headerlink" title="典型的面向对象语言"></a>典型的面向对象语言</h3><p>　　Java/c#/Python等等。众多编程语言或者设计之初已支持面向对象特性，又或者后来在更新面向对象特性。而如今在高等编程中，掌握面向对象特性已经或不可缺，编程语言对于面向对象的支持度又决定了其性能。</p>
+<h3 id="面向对象编程语言的展望"><a href="#面向对象编程语言的展望" class="headerlink" title="面向对象编程语言的展望"></a>面向对象编程语言的展望</h3><p> 　　从目前来看，作为程序员必须掌握一门面向对象编程语言，同时IT界技术不断发展，类似于F#、Docker等技术不断涌出，以及互联网的风靡，不少程序员更加青睐于类似于javascript、java、python等对网络支持性良好的语言，然而这一切都脱离不了面向对象思想，因为万物皆对象。</p>
+<h2 id="面向对象特征"><a href="#面向对象特征" class="headerlink" title="面向对象特征"></a>面向对象特征</h2><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>　　在面向对象程序设计中有个重要概念——继承不得不提。同时其存在也极为增加了代码可重用性，简化了软件开发过程。<br>　　被继承的类成为父类、基类，继承的类成为子类、派生类。子类可以继承拥有权限的父类的变量、方法、访问器等等，然而在其基础上扩展类的定义。子类还可以重写和覆盖父类的方法，而这也是面向对象的多态性的体现。<br>　　首先由继承就可知存在访问修饰符，它们分别为internal、public、protected、private。</p>
+<pre><code>public：访问不受限制。
+protected：访问仅限于包含类或从包含类派生的类型。
+Internal：访问仅限于当前程序集。
+protected internal：访问仅限于当前程序集或从包含类派生的类型。
+private：访问仅限于包含类型。
+其中还有特殊的两类：sealed和virtual。
+Sealed所修饰的类无法作为基类被继承。
+Virtual可用于修饰需要被重写的方法等等。
+</code></pre><p>　　接下来用一些C#示例来说明继承特性。</p>
+<pre><code>namespace temp
+{
+    class animalClass
+    {
+        public class animal
+        {
+            public int number;
+            int Number
+            {
+                set { this.number = value; }
+                get { return this.number; }
+            }
+
+        public animal(int num)
+        {
+            this.number = num;
+            Console.WriteLine(&quot;Create animal&quot;);
+        }
+
+        public void animfun()
+        {
+            Console.WriteLine(&quot;Function of animal&quot;);
+            Console.WriteLine(&quot;Number of animal is {0}&quot;, number);
+        }
+
+        virtual public void virtualfun()
+        {
+            Console.WriteLine(&quot;Don&apos;t do it!&quot;);
+        }
+    }
+
+    public class bird:animal
+    {
+        public string colour;
+        string Colour
+        {
+            set { this.colour = value; }
+            get { return this.colour; }
+        }
+
+        public bird(int num,string col):base(num)
+        {
+            this.colour=col;
+        }
+
+        public void birdfun()
+        {
+            Console.WriteLine(&quot;Function of bird&quot;);
+            Console.WriteLine(&quot;number of bird is {0} and colour of bird is {1}&quot;, number, colour);
+        }
+
+        public override void virtualfun()
+        {
+            Console.WriteLine(&quot;Change it!&quot;);
+        }
+    }
+}
+</code></pre><p>}</p>
+<p>　　以上为animal和bird的定义。</p>
+<pre><code>namespace temp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            animalClass.bird bir = new animalClass.bird(19, &quot;blue&quot;);
+            bir.birdfun();
+        }
+    }
+}
+</code></pre><p>　　如上实例化bird类的对象bir之后在调用birdfun可得结果：</p>
+<pre><code>Create animal
+Function of bird
+number of bird is 19 and colour of bird is blue
+</code></pre><p>　　可见bird类的确继承了来自animal类的number字段并且拥有了自己的属性——用于储存colcur的字符串。同时可以调用animal类的animfun函数和bird类的birdfun函数。</p>
+<h3 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h3><p>　　面向对象程序设计用经常涉及子类继承父类，就如乌鸦是鸟类的一个对象一样，鸟类抽象出了乌鸦和喜鹊共同的属性。同时由此我们可以引入面向对象中的另一个概念——抽象。</p>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><p>　　在C#中接口就是抽象的一种，它可以要求继承自其的类必须实现其中的方法，提供一种统一的标准来实现类。</p>
+<pre><code>namespace temp
+{
+    public interface Interface1
+    {
+        void fun();
+    }
+}
+</code></pre><p>　　示例中定义一个名为Interface1的接口，其中它要求实现无返回值的fun方法。</p>
+<pre><code>namespace temp
+{
+    class fromInterface1 :Interface1
+    {
+        public void fun()
+        {
+            Console.WriteLine(&quot;This is fun&quot;);
+        }
+    }
+}
+</code></pre><p>　　类fromInterface1则继承自Interface1，因此倘若不实现fun方法，编译器就会报错。如：error CS0535: “temp.fromInterface1”不实现接口成员“temp.Interface1.fun()”。</p>
+<h4 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h4><p>C#中抽象还有另一种实现方式——抽象类以及抽象方法。</p>
+<pre><code>namespace temp
+{
+    class @abstract
+    {
+        abstract class num1
+        {
+            abstract public void fun();
+        }
+
+        class num2 : num1
+        {
+            public override void fun()
+            {
+                Console.WriteLine(&quot;Do it!&quot;);
+            }
+        }
+    }
+}
+</code></pre><p>　　同继承自抽象接口，子类继承抽象类中的抽象方法时，必须重写抽象方法，否则编译器会报错，无法通过编译。<br>　　同时抽象类也有着其特征，不能从抽象类实例化对象，同时子类也必须实现抽象类中所有抽象方法。如同示例中所示范，用关键词override来重写抽象方法。</p>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>　　多态是一种面向对象程序设计中的概念。多态为程序设计提供了灵活性、变通性与多样性。<br>　　在C#中多态可以体现为函数重载、抽象类、重写函数。</p>
+<h4 id="函数重载："><a href="#函数重载：" class="headerlink" title="函数重载："></a>函数重载：</h4><pre><code>定义了如下类：
+
+class simpleSample
+    {
+        public simpleSample(int n)
+        {
+            Console.WriteLine(&quot;Create simpleSample and this is 1&quot;);
+        }
+
+    public simpleSample(int n,int m)
+    {
+        Console.WriteLine(&quot;Create simpleSample and this is 2&quot;);
+    }
+}
+</code></pre><p>　　当以语句simpleSample sam = new simpleSample(1)实例化时，输出Create simpleSample and this is 1<br>　　当以语句simpleSample sam = new simpleSample(1,2)实例化时，输出Create simpleSample and this is 2<br>　　可见相同的函数，当调用时传入参数不同时，可以完成不同的功能，这就是函数重载。</p>
+<h4 id="抽象类。"><a href="#抽象类。" class="headerlink" title="抽象类。"></a>抽象类。</h4><p>　　重写函数在抽象一节中已经出现示例。只有用virtual、abstract、override定义的函数才能重写。通过重写函数、继承抽象类，可以以相同的函数、形式完成不同的功能，这就是多态的本质之一。<br>　　多态为面向对象程序设计重要特性之一，也即同一操作作用于不同的对象，可以有不同的解释，产生不同的执行结果。</p>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>　　封装的定义为隐藏对象的属性和实现细节，仅对外公开接口，控制在程序中属性的读取和修改的访问级别。</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>　　在C#中可以用属性对进行封装。属性可以分为get和set访问器，由此可以将字段设置为可读、可写或可读写，同时不仅如此，还可在访问器中进行操作来完成需求。<br>    定义如下：</p>
+<pre><code>class simpleSample2
+{
+    public int number;
+    public int Number
+    {
+        get{return this.number;}
+        set { this.number = value; }
+    }
+
+public int number2;
+public int Number2
+{
+    set { this.number2 = value + 1; }
+    get {return this.number2;}
+}
+
+public simpleSample2()
+{
+    Console.WriteLine(&quot;Create simpleSample2&quot;);
+}
+</code></pre><p>}<br>　　主程序如下：</p>
+<pre><code>    simpleSample2 sam = new simpleSample2();
+    sam.Number = 1;
+    sam.Number2 = 1;
+Console.WriteLine(&quot;number={0} and number2={1}&quot;, sam.number, sam.number2);
+</code></pre><p>　　结果如下：</p>
+<pre><code>Create simpleSample2
+number=1 and number2=2
+</code></pre><p>　　可见通过set访问器可在访问字段时进行操作，同时通过设置读写权限完成封装操作。</p>
+<h4 id="接口和权限修饰符"><a href="#接口和权限修饰符" class="headerlink" title="接口和权限修饰符"></a>接口和权限修饰符</h4><p>　　封装就是对代码、程序进行保护。通过权限修饰符保护代码的可访问性，再提供接口，用户在不清楚实现细节的基础上就可以使用代码，完成了封装效果。<br>　　具体过程一般就是从类中抽象出函数原型再组成C#中Interface，就完成了提供接口。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag">#C#</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/12/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/image.jpg"
+               alt="shlijiapeng" />
+          <p class="site-author-name" itemprop="name">shlijiapeng</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shlijiapeng" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/shlijiapeng" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/shlijiapeng" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-概述"><span class="nav-number">1.</span> <span class="nav-text">C#概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象程序设计概述"><span class="nav-number">1.1.</span> <span class="nav-text">面向对象程序设计概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#面向过程程序设计的来由"><span class="nav-number">1.1.1.</span> <span class="nav-text">面向过程程序设计的来由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#典型的面向对象语言"><span class="nav-number">1.1.2.</span> <span class="nav-text">典型的面向对象语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象编程语言的展望"><span class="nav-number">1.1.3.</span> <span class="nav-text">面向对象编程语言的展望</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象特征"><span class="nav-number">1.2.</span> <span class="nav-text">面向对象特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">1.2.1.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象"><span class="nav-number">1.2.2.</span> <span class="nav-text">抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接口"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象类"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">抽象类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多态"><span class="nav-number">1.2.3.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数重载："><span class="nav-number">1.2.3.1.</span> <span class="nav-text">函数重载：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象类。"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">抽象类。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封装"><span class="nav-number">1.2.4.</span> <span class="nav-text">封装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接口和权限修饰符"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">接口和权限修饰符</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">shlijiapeng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+
+</body>
+</html>
