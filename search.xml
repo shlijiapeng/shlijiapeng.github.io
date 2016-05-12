@@ -4,9 +4,9 @@
   
     
     <entry>
-      <title><![CDATA[Introduce To C#]]></title>
-      <url>http://www.shlijiapeng.com/2016/05/12/introducetocsharp/</url>
-      <content type="html"><![CDATA[<h1 id="C-概述"><a href="#C-概述" class="headerlink" title="C#概述"></a>C#概述</h1><p>选修课结课论文，just for fun.<br><a id="more"></a></p>
+      <title><![CDATA[C#概述]]></title>
+      <url>http://www.shlijiapeng.com/2016/05/12/Introductiontocsharp/</url>
+      <content type="html"><![CDATA[<p>选修课结课论文，just for fun.<br><a id="more"></a></p>
 <h2 id="面向对象程序设计概述"><a href="#面向对象程序设计概述" class="headerlink" title="面向对象程序设计概述"></a>面向对象程序设计概述</h2><h3 id="面向过程程序设计的来由"><a href="#面向过程程序设计的来由" class="headerlink" title="面向过程程序设计的来由"></a>面向过程程序设计的来由</h3><p>　　要解释面向对象程序设计，都应当将其与面向过程程序设计作对比。<br>　　面向过程程序设计往往是流程化的，以机械式思维来解决问题，同时要求程序员的思维模式偏向硬件，从机械的角度来考虑如何一步步解决问题。<br>然而随着计算机科学、网络以及信息技术的发展，这种编程思维越发力不从心。这意味着在开发大型软件项目时，面向过程程序设计往往显得力不从心，程序员不得不开发一个个模块来完成功能，代码复用率低下、研发周期长、软件工作效率低下等等。<br>　　因此为了适应现代社会对软件开发的更高需求，面向对象程序设计作为解决方案而兴起。<br>　　面向对象的核心思想为万物皆对象。这种思想十分接近于人类思维方式，而不像面向过程程序设计那样程序员不得不从机器的角度来思考问题。<br>　　同时面向对象导入了类与对象的思想。类就是特定拥有共同属性、特征的对象的集合，对象则是类的实例，它实现了类的属性、特征等等。这和现实世界中是非常贴近的，比如鸟可以作为一种类，而乌鸦和喜鹊都可以作为鸟类的对象，他们共同拥有鸟类的属性——翅膀、飞翔等等。然而它们之间却也有不同的属性，比如乌鸦拥有全黑的羽毛，而喜鹊却不是，这就涉及到继承与子类了。<br>　　由此，面向对象程序设计产生并且不断发展壮大，成为或不可缺的一部分。</p>
 <h3 id="典型的面向对象语言"><a href="#典型的面向对象语言" class="headerlink" title="典型的面向对象语言"></a>典型的面向对象语言</h3><p>　　Java/c#/Python等等。众多编程语言或者设计之初已支持面向对象特性，又或者后来在更新面向对象特性。而如今在高等编程中，掌握面向对象特性已经或不可缺，编程语言对于面向对象的支持度又决定了其性能。</p>
 <h3 id="面向对象编程语言的展望"><a href="#面向对象编程语言的展望" class="headerlink" title="面向对象编程语言的展望"></a>面向对象编程语言的展望</h3><p> 　　从目前来看，作为程序员必须掌握一门面向对象编程语言，同时IT界技术不断发展，类似于F#、Docker等技术不断涌出，以及互联网的风靡，不少程序员更加青睐于类似于javascript、java、python等对网络支持性良好的语言，然而这一切都脱离不了面向对象思想，因为万物皆对象。</p>
@@ -137,14 +137,12 @@ number of bird is 19 and colour of bird is blue
 }
 </code></pre><p>　　同继承自抽象接口，子类继承抽象类中的抽象方法时，必须重写抽象方法，否则编译器会报错，无法通过编译。<br>　　同时抽象类也有着其特征，不能从抽象类实例化对象，同时子类也必须实现抽象类中所有抽象方法。如同示例中所示范，用关键词override来重写抽象方法。</p>
 <h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>　　多态是一种面向对象程序设计中的概念。多态为程序设计提供了灵活性、变通性与多样性。<br>　　在C#中多态可以体现为函数重载、抽象类、重写函数。</p>
-<h4 id="函数重载："><a href="#函数重载：" class="headerlink" title="函数重载："></a>函数重载：</h4><pre><code>定义了如下类：
-
-class simpleSample
+<h4 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h4><pre><code>class simpleSample
+{
+    public simpleSample(int n)
     {
-        public simpleSample(int n)
-        {
-            Console.WriteLine(&quot;Create simpleSample and this is 1&quot;);
-        }
+        Console.WriteLine(&quot;Create simpleSample and this is 1&quot;);
+    }
 
     public simpleSample(int n,int m)
     {
@@ -152,7 +150,7 @@ class simpleSample
     }
 }
 </code></pre><p>　　当以语句simpleSample sam = new simpleSample(1)实例化时，输出Create simpleSample and this is 1<br>　　当以语句simpleSample sam = new simpleSample(1,2)实例化时，输出Create simpleSample and this is 2<br>　　可见相同的函数，当调用时传入参数不同时，可以完成不同的功能，这就是函数重载。</p>
-<h4 id="抽象类。"><a href="#抽象类。" class="headerlink" title="抽象类。"></a>抽象类。</h4><p>　　重写函数在抽象一节中已经出现示例。只有用virtual、abstract、override定义的函数才能重写。通过重写函数、继承抽象类，可以以相同的函数、形式完成不同的功能，这就是多态的本质之一。<br>　　多态为面向对象程序设计重要特性之一，也即同一操作作用于不同的对象，可以有不同的解释，产生不同的执行结果。</p>
+<h4 id="抽象类-1"><a href="#抽象类-1" class="headerlink" title="抽象类"></a>抽象类</h4><p>　　重写函数在抽象一节中已经出现示例。只有用virtual、abstract、override定义的函数才能重写。通过重写函数、继承抽象类，可以以相同的函数、形式完成不同的功能，这就是多态的本质之一。<br>　　多态为面向对象程序设计重要特性之一，也即同一操作作用于不同的对象，可以有不同的解释，产生不同的执行结果。</p>
 <h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>　　封装的定义为隐藏对象的属性和实现细节，仅对外公开接口，控制在程序中属性的读取和修改的访问级别。</p>
 <h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>　　在C#中可以用属性对进行封装。属性可以分为get和set访问器，由此可以将字段设置为可读、可写或可读写，同时不仅如此，还可在访问器中进行操作来完成需求。<br>    定义如下：</p>
 <pre><code>class simpleSample2
