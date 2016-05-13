@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title><![CDATA[Ros]]></title>
+      <title><![CDATA[Robot operating system]]></title>
       <url>http://www.shlijiapeng.com/2016/05/13/ros/</url>
       <content type="html"><![CDATA[<h1 id="Ros概述"><a href="#Ros概述" class="headerlink" title="Ros概述"></a>Ros概述</h1><h2 id="历史概述"><a href="#历史概述" class="headerlink" title="历史概述"></a>历史概述</h2><p>　　伴随科学技术发展，人工智能的需求日益增长，机器人领域也迅速发展，响应需求，Willow Garage公司于2010年发布了开源机器人操作系统Ros。<br>　　Ros英文全称为robot operating system。如其名，其主要用于硬件抽象描述、底层驱动程序管理、共用功能的执行、程序间的消息传递、程序发行包管理，具体表现如动态导航壁障、手臂抓取物品、图像识别等。作为开源系统，其汇集众多社区贡献者项目代码，遵循于BSD许可。<br><a id="more"></a></p>
 <h2 id="现状概述"><a href="#现状概述" class="headerlink" title="现状概述"></a>现状概述</h2><p>　　目前Ros已在机器人研究领域掀起热潮。以robocup大赛为例，国内许多参赛队伍机器人导航模块采用此系统。中科大“可佳”机器人曾于去年夺得国际赛冠军，不例外，他们也采用ros系统，可见ros潜力可观。 </p>
