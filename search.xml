@@ -4,6 +4,55 @@
   
     
     <entry>
+      <title><![CDATA[Ros]]></title>
+      <url>http://www.shlijiapeng.com/2016/05/13/ros/</url>
+      <content type="html"><![CDATA[<h1 id="Ros概述"><a href="#Ros概述" class="headerlink" title="Ros概述"></a>Ros概述</h1><h2 id="历史概述"><a href="#历史概述" class="headerlink" title="历史概述"></a>历史概述</h2><p>　　伴随科学技术发展，人工智能的需求日益增长，机器人领域也迅速发展，响应需求，Willow Garage公司于2010年发布了开源机器人操作系统Ros。<br>　　Ros英文全称为robot operating system。如其名，其主要用于硬件抽象描述、底层驱动程序管理、共用功能的执行、程序间的消息传递、程序发行包管理，具体表现如动态导航壁障、手臂抓取物品、图像识别等。作为开源系统，其汇集众多社区贡献者项目代码，遵循于BSD许可。<br><a id="more"></a></p>
+<h2 id="现状概述"><a href="#现状概述" class="headerlink" title="现状概述"></a>现状概述</h2><p>　　目前Ros已在机器人研究领域掀起热潮。以robocup大赛为例，国内许多参赛队伍机器人导航模块采用此系统。中科大“可佳”机器人曾于去年夺得国际赛冠军，不例外，他们也采用ros系统，可见ros潜力可观。 </p>
+<h1 id="Ros原理概述"><a href="#Ros原理概述" class="headerlink" title="Ros原理概述"></a>Ros原理概述</h1><h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><p>　　Ros文件系统主要以包为主，功能程序打包成包以模块形式独立运行。建立包时添加依赖、导入ros官方库或开源包，扩展程序功能模块。包通过CMake编译系统编译，可以在pakage.xml中自行定制编译细节。包的层次结构可见图1.</p>
+<p><center> <img src="http://img.blog.csdn.net/20151118155215448" alt="图１"><br>图1</center></p>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>　　堆是包的集合，它提供一个完整的功能。</p>
+<h2 id="计算图级"><a href="#计算图级" class="headerlink" title="计算图级"></a>计算图级</h2><h3 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h3><p>　　节点即为程序模块，可视作ros程序的基础组成模块。各个节点作为线程独立运行，执行不同操作，通过通讯传输数据。</p>
+<h3 id="消息"><a href="#消息" class="headerlink" title="消息"></a>消息</h3><p>　　节点之间通过消息通讯。消息所采用的数据结构既可以是C语言所支持的数据结构，也可以是ros内置的数据结构，如导航模块所需的geometry/Twist数据类型，更可以是自定义的数据结构。</p>
+<h3 id="话题"><a href="#话题" class="headerlink" title="话题"></a>话题</h3><p>　　消息通过发布/订阅的方式传播，节点发布消息到话题，另一节点订阅话题，即可以获取消息。可见图2.<br>　<center> <img src="http://img.blog.csdn.net/20151118155400364" alt="这里写图片描述"><br>图2</center></p>
+<h3 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h3><p>　　服务好比web服务器，采取请求/回应模式传输数据。相比于话题的广播式发布数据，服务节点通信信道是唯一的，也由此简化节点设计。</p>
+<h3 id="Actionlib"><a href="#Actionlib" class="headerlink" title="Actionlib"></a>Actionlib</h3><p>　　Actionlib实时反馈数据，支持高级数据处理与节点设计模式。</p>
+<h1 id="Ros安装"><a href="#Ros安装" class="headerlink" title="Ros安装"></a>Ros安装</h1><p>　　Ros推荐运行于ubuntu操作系统，安装方法可参照官网教程。<br>由于其对于图像处理有一定要求，所以计算棒、树莓派等简单计算机并不能胜任工作。</p>
+<h1 id="Ros简易指南"><a href="#Ros简易指南" class="headerlink" title="Ros简易指南"></a>Ros简易指南</h1><h2 id="工作空间"><a href="#工作空间" class="headerlink" title="工作空间"></a>工作空间</h2><p>　　创建工作空间以在其内创建软件包。</p>
+<h2 id="Rviz"><a href="#Rviz" class="headerlink" title="Rviz"></a>Rviz</h2><p>　　Ros可视化工具，将地图数据、激光数据、点云数据可视化表现。支持用户自行配置以及保存配置信息。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><pre><code>catkin_init_workspace：初始化工作空间
+catkin_make：编译软件包
+rospack find:寻找软件包
+roscore：运行ros内核
+rosrun:运行节点
+roslaunch：运行launch文件
+rostopic pub:发布消息至话题
+rosrun rqt…:rqt命令集提供一系列可视化工具
+</code></pre><h2 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h2><pre><code>geometry/Twist:包含线速度、角速度数据，用以下发底盘速度。
+sensor_msgs/Laser_scan：激光数据类型
+scansor_msgs/PointClouod:点云数据类型
+</code></pre><h2 id="Launch文件"><a href="#Launch文件" class="headerlink" title="Launch文件"></a>Launch文件</h2><p>　　Launch文件支持。其实际为xml所定义的格式化语言，通过launch文件，可以同时启动多个结点、读入参数等等。</p>
+<h1 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h1><h2 id="导航架构"><a href="#导航架构" class="headerlink" title="导航架构"></a>导航架构</h2><p>　　导航涉及底盘运动、实时避障等。其中又可分为坐标系系统、传感器模块、里程计模块、底盘控制、地图服务等。<br>　　要充分利用导航堆，需要合理配置各个模块，针对机器人硬件适配与优化。</p>
+<h2 id="Navigation-stack"><a href="#Navigation-stack" class="headerlink" title="Navigation stack"></a>Navigation stack</h2><h3 id="Global、Local"><a href="#Global、Local" class="headerlink" title="Global、Local"></a>Global、Local</h3><p>　　全局规划负责路径规划，本地规划则负责局部实时规划。<br>　　设定目标点后，全局负责规划路径，遇见障碍物或者局部地图产生变化时，本地负责分析并重新规划合理路径。</p>
+<h3 id="Costmap"><a href="#Costmap" class="headerlink" title="Costmap"></a>Costmap</h3><p>　　导航堆用costmap储存障碍物信息。</p>
+<h3 id="Recovery-behaviors"><a href="#Recovery-behaviors" class="headerlink" title="Recovery_behaviors"></a>Recovery_behaviors</h3><p>　　导航过程中难免产生误差，当导航模块计算得规划数据和实际数据存在误差，便会采取修复行为来修复tf坐标系数据。<br>　　修复行为可分为：rotate_recovery和clear_costmap_recovery。<br>    Rotate_recovery:旋转360度以清理costmap<br>    Clear_costmap_recovery:移动至原地点一定距离外借以清理costmap</p>
+<h3 id="Cmd-vel"><a href="#Cmd-vel" class="headerlink" title="Cmd_vel"></a>Cmd_vel</h3><p>　　导航模块下发速度时常用话题名。</p>
+<h3 id="Map-sever"><a href="#Map-sever" class="headerlink" title="Map_sever"></a>Map_sever</h3><p>　　地图服务采用像素点匹配模式，即实时数据和地图数据进行像素点匹配。因此，必要时可以使用photoshop修改地图，模拟障碍物信息。</p>
+<h3 id="Amcl"><a href="#Amcl" class="headerlink" title="Amcl"></a>Amcl</h3><p>　　机器人的二维移动概率定位系统。</p>
+<p><center> <img src="http://img.blog.csdn.net/20151118155432821" alt="这里写图片描述"><br>图3</center></p>
+<h2 id="Tf坐标系"><a href="#Tf坐标系" class="headerlink" title="Tf坐标系"></a>Tf坐标系</h2><p>　　机器人由各个组件组成，如激光、底盘、里程计、手臂。Ros中需要为各个组件建立独立坐标系，再通过tf系统转换各个坐标系，而base_link则作为坐标系中心。见图4<br> <img src="http://img.blog.csdn.net/20151118155459731" alt="这里写图片描述"><br>图4<br>　　建立tf树以建立合适的tf坐标系，可见图5。<br>　　各个独立坐标系通过tf树建立互相联系，tf坐标系既可为机器人定位，也可为各组件有序运动助力。<br>  <center> <img src="http://img.blog.csdn.net/20151118155522639" alt="这里写图片描述"><br>图5</center></p>
+<h2 id="传感器"><a href="#传感器" class="headerlink" title="传感器"></a>传感器</h2><h3 id="激光数据"><a href="#激光数据" class="headerlink" title="激光数据"></a>激光数据</h3><p>　　激光数据主要用于二维导航。所需传感器为激光，使用数据类型为senor_msgs/LaserScan。</p>
+<h3 id="点云数据"><a href="#点云数据" class="headerlink" title="点云数据"></a>点云数据</h3><p>　　点云提供三维世界数据，主要用于建立三维地图。Kinect等传感器支持点云数据输入，使用数据类型为senor_msgs/PointCloud。</p>
+<h2 id="底盘控制"><a href="#底盘控制" class="headerlink" title="底盘控制"></a>底盘控制</h2><p>　　底盘是机器人最重要的组件之一，运动控制器、里程计、电机等基础组件都包含在底盘中。而同时，若底盘不能够正常运作，上层许多功能都无法正常服务。<br>　　适配底盘也即是将cmd_vel数据类型转换成驱动器解析需求的数据类型，再由驱动器控制电机转动，完成底盘运动。</p>
+<h2 id="里程计"><a href="#里程计" class="headerlink" title="里程计"></a>里程计</h2><p>　　里程计返回里程数据，传递给里程计坐标系。</p>
+<h1 id="Pluginlib"><a href="#Pluginlib" class="headerlink" title="Pluginlib"></a>Pluginlib</h1><p>　　编写插件以配置nav core的修复行为，costmap误差较大时，合理采取修复行为以抵达目标点。</p>
+<h1 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h1><p>　　正确配置IDE，则可以在IDE中编写及调试ros程序。<br>　　c、c++推荐使用eclipse，python推荐使用pycharm。</p>
+<blockquote>
+<p>引用块内容<br><a href="http://blog.csdn.net/hcx25909/article/category/1191901" target="_blank" rel="external">http://blog.csdn.net/hcx25909/article/category/1191901</a><br><a href="http://blog.csdn.net/lanhuadechenmo" target="_blank" rel="external">http://blog.csdn.net/lanhuadechenmo</a><br>wiki.ros.org</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[C#概述]]></title>
       <url>http://www.shlijiapeng.com/2016/05/12/Introductiontocsharp/</url>
       <content type="html"><![CDATA[<p>选修课结课论文，just for fun.<br><a id="more"></a></p>
