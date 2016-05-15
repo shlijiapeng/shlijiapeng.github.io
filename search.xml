@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title><![CDATA[Adafruit公司2015年最棒的开源可穿戴设备]]></title>
+      <url>http://www.shlijiapeng.com/2016/05/15/Adafruitswearablesof2015/</url>
+      <content type="html"><![CDATA[<p>一篇翻译，前段时间两天的劳动成果，虽然白忙了。<br>存货发完啦，下次更新时间就是未知数了。<br><a id="more"></a></p>
+<p><img src="https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/osdc-open-source-yearbook-lead9.png?itok=txmvl1Mq" alt=""></p>
+<p>可穿戴设备于过去一年中爆炸式增长。数不胜数的微型设备向市场推出，它们不仅仅是为了追踪健康状况，也为了调整日常姿势、提醒涂抹防晒霜、基于力传感器控制姿势，等等。由于依附于人体的技术相比以往更加无处不在，拥有开发可穿戴技术的开源工具更加重要，所以我们在维护生物识别数据隐私的同时创造了时尚技术的未来。</p>
+<p>Adafruit公司制造开源硬件、教程和源代码以让你创造你自己的DIY电子项目。以下是一些2015年我们最受欢迎的开源可穿戴产品和项目。</p>
+<h2 id="FLORA-v2（Adafruit-FLORA升级而来）"><a href="#FLORA-v2（Adafruit-FLORA升级而来）" class="headerlink" title="FLORA v2（Adafruit FLORA升级而来）"></a>FLORA v2（Adafruit FLORA升级而来）</h2><p><img src="https://opensource.com/sites/default/files/adafruitflorabookpack.jpg" alt=""></p>
+<p><a href="https://www.adafruit.com/products/659" target="_blank" rel="external">FLORA可穿戴单片机</a>今年获得了一次硬件升级，新增一个USB端口和支持色彩变换的集成可编程模块NeoPixel，同时其代码原生兼容Arduino。2015年我们也带来了《<a href="https://www.adafruit.com/products/1839" target="_blank" rel="external">上手Adafruit FLORA</a>》，一本面对初学者关于可穿戴单片机项目的导航书籍。</p>
+<p>此书覆盖了关于FLORA家族组成、工具和技术的基础知识，以及三个项目以让你上手，包括内置于衣服的开关、舞步激活的灯光和DIY GPS手表。<a href="https://www.adafruit.com/products/2404" target="_blank" rel="external">Flora书籍包</a>整合了书中所使用的部分用品，如需更多请到<a href="https://learn.adafruit.com/category/flora" target="_blank" rel="external">Adafruit学习系统-Flora教程</a>以开发其他开源项目。</p>
+<h2 id="FLORA和FONA组成的短信背包"><a href="#FLORA和FONA组成的短信背包" class="headerlink" title="FLORA和FONA组成的短信背包"></a>FLORA和FONA组成的短信背包</h2><p><a href="https://youtu.be/cUDo4xzv70E" target="_blank" rel="external">Flora + Fona SMSsenger bag</a></p>
+<p>最近一个采用FLORA的项目是短信背包—一个可寻址LED矩阵，它显示从FONA开源短信模块所接收的短信。开发无线通讯可穿戴设备是十分有趣、值得纪念的，并且可用于FONA和NeoPixels的Arduino开源库使得对于初学者、学生和爱好者来说更易上手创造个人区域网络可穿戴设备。</p>
+<h2 id="FLORA-Bluefruit-LE-模块（和Bluefruit-LE-Connect-for-iOS-Android）"><a href="#FLORA-Bluefruit-LE-模块（和Bluefruit-LE-Connect-for-iOS-Android）" class="headerlink" title="FLORA Bluefruit LE 模块（和Bluefruit LE Connect for iOS/Android）"></a>FLORA Bluefruit LE 模块（和Bluefruit LE Connect for iOS/Android）</h2><p><a href="https://youtu.be/vKRa42ZugG0" target="_blank" rel="external">Flora Wearable Bluefruit LE Module</a></p>
+<p>说起网络可穿戴设备，<a href="https://www.adafruit.com/products/2487" target="_blank" rel="external">FLORA Bluefruit LE</a>于2015年首次亮相。这款可缝纫低功耗蓝牙模块使得连接你的手机或平板电脑以获取控制更简单，例如，改变你裙子中LED的颜色，或者传输传感器数据到类似于adafruit.io的云服务器。构建于NordicnRF51822，因此FLORA Bluefruit LE模块也可用作隐藏键盘或者UriBeacon。Bluefruit开发板家族可与(同样<a href="https://github.com/adafruit?utf8%3D%25E2%259C%2593%26query%3Dbluefruit_le_connect" target="_blank" rel="external">开源的</a>)Adafruit Bluefruit LE Connect apps for <a href="https://play.google.com/store/apps/details?id=com.adafruit.bluefruit.le.connect" target="_blank" rel="external">Android</a> and <a href="https://itunes.apple.com/us/app/adafruit-bluefruit-le-connect/id830125974" target="_blank" rel="external">iOS</a>协同工作。</p>
+<h2 id="Zac-Posen与代码构成的裙子"><a href="#Zac-Posen与代码构成的裙子" class="headerlink" title="Zac Posen与代码构成的裙子"></a>Zac Posen与代码构成的裙子</h2><p><a href="https://youtu.be/rNtWlVP5qrs" target="_blank" rel="external">Dressed In Code:Light up the runway</a></p>
+<p>今年，谷歌主动与Zac Posen合作作为他们<a href="https://www.madewithcode.com/" target="_blank" rel="external">“用代码构成”</a>项目的一员来开发一款LED裙子，它栩栩如生的款式由世界各地女孩编写代码而成。Maddy Maxey帮助将裙子带向日常并在关于该项目的教学中将<a href="http://www.instructables.com/id/Make-a-Runway-Ready-Programmable-LED-Matrix-Dress/?ALLSTEPS&amp;sa=D&amp;usg=AFQjCNFA7DchWaPAdk8jA8aLO5gef9Rl0w" target="_blank" rel="external">其硬件构造文档化</a>（使用FLORA和NeoPixels），这些在<a href="https://blog.adafruit.com/2015/09/16/how-to-make-a-runway-ready-programmable-led-matrix-dress-zac_posen-madewithcode-thecrated-wearablewednesday/" target="_blank" rel="external">纽约时尚周的T台上首次亮相</a>。</p>
+<h2 id="Arduino-GEMMA"><a href="#Arduino-GEMMA" class="headerlink" title="Arduino GEMMA"></a>Arduino GEMMA</h2><p><img src="https://opensource.com/sites/default/files/arduinogemma.jpg" alt=""></p>
+<p>FLORA不是今年唯一一款升级的主板，它的小姐妹GEMMA新增一个USB端口、开关键，同时它的新蓝色堂兄初次亮相——<a href="https://www.arduino.cc/en/Main/ArduinoGemma" target="_blank" rel="external">官方Arduino GEMMA</a>。这款构建于ATtiny85单片机的微主板可以控制NeoPixels、读取简单传感器并且足够体积小、功耗低以轻松嵌入可穿戴设备。当你在<a href="https://www.adafruit.com/products/1222" target="_blank" rel="external">Adafruit</a>或者<a href="https://www.adafruit.com/products/2470" target="_blank" rel="external">Arduino</a>购得GEMMA v2时，官方合作伙伴为Arduino GEMMA提供了Arduino IDE、盒装包装和其他最好服务的原生支持。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Robot operating system]]></title>
       <url>http://www.shlijiapeng.com/2016/05/13/ros/</url>
       <content type="html"><![CDATA[<h1 id="Ros概述"><a href="#Ros概述" class="headerlink" title="Ros概述"></a>Ros概述</h1><h2 id="历史概述"><a href="#历史概述" class="headerlink" title="历史概述"></a>历史概述</h2><p>　　伴随科学技术发展，人工智能的需求日益增长，机器人领域也迅速发展，响应需求，Willow Garage公司于2010年发布了开源机器人操作系统Ros。<br>　　Ros英文全称为robot operating system。如其名，其主要用于硬件抽象描述、底层驱动程序管理、共用功能的执行、程序间的消息传递、程序发行包管理，具体表现如动态导航壁障、手臂抓取物品、图像识别等。作为开源系统，其汇集众多社区贡献者项目代码，遵循于BSD许可。<br><a id="more"></a></p>
