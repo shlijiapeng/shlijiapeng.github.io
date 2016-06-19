@@ -4,6 +4,7 @@ shlijiapeng's Blog
 www.shlijiapeng.com
 -------------------
 
-hello
+Hello
 -----
+本仓库由Hexo部署
 
