@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="C++,正则表达式," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -90,16 +90,16 @@
 
 
 
-<meta name="description" content="我觉得我编写这个多项式解析的过程中收获了很多，而且自己对成果也很满意，所以决定将过程与思路记录成博文。">
+<meta name="description" content="睡前更新随便写一些。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回忆多项式解析运算思路">
-<meta property="og:url" content="http://www.shlijiapeng.com/2016/05/24/poly/index.html">
+<meta property="og:title" content="最终还是没选择Android">
+<meta property="og:url" content="http://www.shlijiapeng.com/2016/06/28/whygiveupAndroid/index.html">
 <meta property="og:site_name" content="shlijiapeng's Blog">
-<meta property="og:description" content="我觉得我编写这个多项式解析的过程中收获了很多，而且自己对成果也很满意，所以决定将过程与思路记录成博文。">
-<meta property="og:updated_time" content="2016-05-24T15:10:32.398Z">
+<meta property="og:description" content="睡前更新随便写一些。">
+<meta property="og:updated_time" content="2016-06-27T17:33:59.063Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="回忆多项式解析运算思路">
-<meta name="twitter:description" content="我觉得我编写这个多项式解析的过程中收获了很多，而且自己对成果也很满意，所以决定将过程与思路记录成博文。">
+<meta name="twitter:title" content="最终还是没选择Android">
+<meta name="twitter:description" content="睡前更新随便写一些。">
 
 
 
@@ -117,7 +117,7 @@
   };
 </script>
 
-  <title> 回忆多项式解析运算思路 | shlijiapeng's Blog </title>
+  <title> 最终还是没选择Android | shlijiapeng's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -266,7 +266,7 @@
             
             
               
-                回忆多项式解析运算思路
+                最终还是没选择Android
               
             
           </h1>
@@ -278,8 +278,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-24T22:42:01+08:00" content="2016-05-24">
-              2016-05-24
+            <time itemprop="dateCreated" datetime="2016-06-28T01:14:12+08:00" content="2016-06-28">
+              2016-06-28
             </time>
           </span>
 
@@ -289,8 +289,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/24/poly/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/24/poly/" itemprop="commentsCount"></span>
+                <a href="/2016/06/28/whygiveupAndroid/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/28/whygiveupAndroid/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,106 +313,12 @@
       
 
       
-        <p>我觉得我编写这个多项式解析的过程中收获了很多，而且自己对成果也很满意，所以决定将过程与思路记录成博文。<br><a id="more"></a></p>
-<p><a href="https://github.com/shlijiapeng/Exercise/blob/master/Poly.cpp" target="_blank" rel="external">首先是完整代码段的Github地址。</a></p>
-<h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><pre><code>typedef struct poly{
-    int coe, ind;
-    struct poly *next;
-}Poly;
-</code></pre><p>一元多项式无非只有系数和指数，所以定义结构体，其中coe存放系数，ind存放指数，并采用单链表链接各节点。</p>
-<h3 id="文本解析"><a href="#文本解析" class="headerlink" title="文本解析"></a>文本解析</h3><p>文本解析方案当初找到了很多，最后决定采用正则表达式，一个是因为方便实用，一个是因为之前学习过正则表达式之后一直没实际使用过，正好借此机会熟悉熟悉。</p>
-<pre><code>regex pattern(&quot;(([+-]|^)\\d+[Xx]\\^\\d+)&quot;);
-
-regex pa(&quot;([+-]|^)(\\d+)([+-]|$)&quot;);
-string rep=&quot;$1$2x^0$3&quot;;
-
-//regex patt(&quot;([+-]|^)(\\d+)([Xx])([+-]|$)&quot;);
-//string replace=&quot;$1$2$3^1$4&quot;;
-regex patt(&quot;([Xx])([+-]|$)&quot;);
-string replace=&quot;$1^1$2&quot;;
-
-regex patter(&quot;([+-]|^)([Xx])&quot;);
-string re = &quot;$1$101$2$3&quot;;
-
-for (n = 0; n &lt; 2; n++){
-    cout &lt;&lt; &quot;请输入多项式:&quot;;
-    cin &gt;&gt; in;
-
-    in = regex_replace(in, patter, re);
-    //格式化字符串:x
-    in=regex_replace(in, patt, replace);
-
-    in = regex_replace(in, pa, rep);
-    //cout &lt;&lt; in &lt;&lt; endl;
-
-     for (std::sregex_iterator it(in.cbegin(), in.cend(), pattern), q; it != q; ++it){
-        //cout &lt;&lt; &quot;str: &quot; &lt;&lt; it-&gt;format(&quot;$1&quot;) &lt;&lt; &quot;\n&quot;;
-        //cout &lt;&lt; it-&gt;format(&quot;$1&quot;)[0];
-
-        ss&lt;&lt;it-&gt;format(&quot;$1&quot;);
-        if(it-&gt;format(&quot;$1&quot;)[0]==&apos;+&apos;||it-&gt;format(&quot;$1&quot;)[0] == &apos;-&apos;) ss&gt;&gt;c;
-        ss&gt;&gt;coe;
-        if(c==&apos;-&apos;) coe=-coe;
-        ss&gt;&gt;c;ss&gt;&gt;c;
-        ss&gt;&gt;ind;
-        //cout&lt;&lt;coe&lt;&lt;endl&lt;&lt;ind&lt;&lt;endl;
-        ss.clear();
-
-        Process(p,coe,ind);
-    }
-    //if(!IsExt()) p = (Poly*)malloc(sizeof(Poly));
-}
-</code></pre><p>首先要讲多项式格式化，类似于+/- a<em>b^c。特殊情况会有两种，第一种是多项式第一项会省略+号，第二种是系数为1的时候会省略系数。<br>而此处核心思路是利用()将匹配出的字符串其中的单个元组格式化，统一为+/- a</em>b^c的格式以方便运算。<br>格式化之后将字符串流输入变量ss，此处使用字符串流将结果步步提取，放入相对应的变量中。</p>
-<h3 id="多项式运算"><a href="#多项式运算" class="headerlink" title="多项式运算"></a>多项式运算</h3><pre><code>void Process(Poly *p,int coe,int ind){
-    Poly *q;
-    //不存在该指数
-    if(!IsExt(ind,p)) {
-        q = (Poly*)malloc(sizeof(Poly));
-        q-&gt;coe=coe;
-        q-&gt;ind=ind;
-        q-&gt;next=NULL;
-        while(p-&gt;next!=NULL) p=p-&gt;next;
-        p-&gt;next=q;
-    }
-    else{
-        q=p-&gt;next;
-        while(ind!=q-&gt;ind) q=q-&gt;next;
-        q-&gt;coe +=coe;
-    }
-}
-</code></pre><p>IsExt函数会检测在链表中是否已存在该指数的节点，若存在，则直接运算结果；若不存在，则建立新节点，并放入数据。</p>
-<h3 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h3><pre><code>void Dis(Poly *p){
-    Poly *q=p;
-    int num=0;
-    cout&lt;&lt;&quot;多项式结果为:&quot;;
-    for(q=q-&gt;next;q!=NULL;q=q-&gt;next){
-        if(q-&gt;coe!=0){
-            num++;
-            if(num&gt;1){
-                if(q-&gt;coe&lt;0) cout&lt;&lt;&quot;-&quot;;
-                else cout&lt;&lt;&quot;+&quot;;
-            }
-
-            if(abs(q-&gt;coe)!=1) cout&lt;&lt;abs(q-&gt;coe);
-            else if(q-&gt;ind==0) cout&lt;&lt;abs(q-&gt;coe);
-
-            if (q-&gt;ind == 1)
-                cout&lt;&lt;&quot;x&quot;;
-            else if(q-&gt;ind!=0)
-                cout &lt;&lt; &quot;x^&quot; &lt;&lt; q-&gt;ind;
-            //if (q-&gt;ind == 1)
-            //    cout &lt;&lt; abs(q-&gt;coe) &lt;&lt; &quot;x&quot;;
-            //else if (q-&gt;ind == 0)
-            //    cout &lt;&lt; abs(q-&gt;coe);
-            //else
-            //    cout &lt;&lt; abs(q-&gt;coe) &lt;&lt; &quot;x^&quot; &lt;&lt; q-&gt;ind;
-        }
-    }
-    if(num==0) cout&lt;&lt;0&lt;&lt;endl;
-}
-</code></pre><p>与解析模块恰恰相反，输出时需注意：<br>1）根据系数正负号输出+/-；若系数为0，则不输出该项<br>2）首项系数若为正数，则省略’+’号<br>3）若系数为1，则省略系数<br>4）若指数为1，不应输出系数符号与指数</p>
-<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>排序模块中利用直接选择排序，将结果降序排列。</p>
-<p>以上大概就是我所编写的多项式运算程序的大致过程与中心想法。</p>
+        <p>睡前更新随便写一些。<br><a id="more"></a></p>
+<p>最初选择Android的时候对于IT业界根本不了解，只是觉得移动开发很火，而且做出来APP都很酷炫，能够立马见到成果还方便展示。也有可能当初只知道APP开发吧，就把这个当做目标了。<br>其实直到最近之前还是。</p>
+<p>但最终我还是没选择Android开发。<br>首先，国内Android生态圈太混乱了！Google服务没有入华，导致Android APP质量参差不齐，没有保障，各种流氓APP等等在Android上拉低用户体验。<br>自己亲身的使用经历导致根本不想再用安卓，连用都不想用，更不要去说开发了。<br>其次，也可能有这个原因。机器人的调试经历导致我深深明白当程序的一部分不在自己的掌控之中时，那是多么痛苦的一件事！就比如机器人，硬件上的小毛病就是能导致你的程序不好弄不好调试，可你就是没办法。我也没深入了解Android开发，但是谁又说不准它也是呢。。。<br>也有一个原因，我不是很喜欢搞UI，反正就是不喜欢。。。没意思啊，花了老长时间去调整界面，不如在代码和算法的世界中有趣，233</p>
+<p>为什么不是iOS呢。<br>很简单。首先，开发成本大。又是MAC又是开发者账户。其次，iOS技术栈太孤立，距离主流技术太远。</p>
+<p>哦对了，可能没选移动开发还有个原因。因为太火了，培训班都遍地开花了，什么三个月教你学会iOS。感觉不是很舒服啊。。。可能我比较传统把。</p>
+<p>好点大概就这样了，睡觉咯。</p>
 
       
     </div>
@@ -432,30 +338,18 @@ for (n = 0; n &lt; 2; n++){
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/C/" rel="tag">#C++</a>
-          
-            <a href="/tags/正则表达式/" rel="tag">#正则表达式</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/15/Adafruitswearablesof2015/" rel="next" title="Adafruit公司2015年最棒的开源可穿戴设备">
-                <i class="fa fa-chevron-left"></i> Adafruit公司2015年最棒的开源可穿戴设备
+              <a href="/2016/06/11/mysuggestion/" rel="next" title="如果现在让我给大一新生一些专业方面的意见">
+                <i class="fa fa-chevron-left"></i> 如果现在让我给大一新生一些专业方面的意见
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/11/mysuggestion/" rel="prev" title="如果现在让我给大一新生一些专业方面的意见">
-                如果现在让我给大一新生一些专业方面的意见 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -470,10 +364,10 @@ for (n = 0; n &lt; 2; n++){
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/05/24/poly/"
-     data-title="回忆多项式解析运算思路"
+        <div class="ds-share flat" data-thread-key="2016/06/28/whygiveupAndroid/"
+     data-title="最终还是没选择Android"
      data-content=""
-     data-url="http://www.shlijiapeng.com/2016/05/24/poly/">
+     data-url="http://www.shlijiapeng.com/2016/06/28/whygiveupAndroid/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -503,8 +397,8 @@ for (n = 0; n &lt; 2; n++){
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/24/poly/"
-           data-title="回忆多项式解析运算思路" data-url="http://www.shlijiapeng.com/2016/05/24/poly/">
+      <div class="ds-thread" data-thread-key="2016/06/28/whygiveupAndroid/"
+           data-title="最终还是没选择Android" data-url="http://www.shlijiapeng.com/2016/06/28/whygiveupAndroid/">
       </div>
     
   </div>
@@ -608,7 +502,7 @@ for (n = 0; n &lt; 2; n++){
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据存储"><span class="nav-number">1.</span> <span class="nav-text">数据存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本解析"><span class="nav-number">2.</span> <span class="nav-text">文本解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多项式运算"><span class="nav-number">3.</span> <span class="nav-text">多项式运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出结果"><span class="nav-number">4.</span> <span class="nav-text">输出结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序"><span class="nav-number">5.</span> <span class="nav-text">排序</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
