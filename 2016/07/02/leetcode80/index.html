@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="LeetCode,算法," />
 
 
 
@@ -90,15 +90,16 @@
 
 
 
-<meta name="description" content="互联网|死宅|少年修炼技能中">
-<meta property="og:type" content="website">
-<meta property="og:title" content="shlijiapeng's Blog">
-<meta property="og:url" content="http://www.shlijiapeng.com/tags/随笔/index.html">
+<meta name="description" content="LeetCode 80">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode80:Remove Duplicates">
+<meta property="og:url" content="http://www.shlijiapeng.com/2016/07/02/leetcode80/index.html">
 <meta property="og:site_name" content="shlijiapeng's Blog">
-<meta property="og:description" content="互联网|死宅|少年修炼技能中">
+<meta property="og:description" content="LeetCode 80">
+<meta property="og:updated_time" content="2016-07-02T11:49:08.526Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="shlijiapeng's Blog">
-<meta name="twitter:description" content="互联网|死宅|少年修炼技能中">
+<meta name="twitter:title" content="LeetCode80:Remove Duplicates">
+<meta name="twitter:description" content="LeetCode 80">
 
 
 
@@ -116,7 +117,7 @@
   };
 </script>
 
-  <title> 标签: 随笔 | shlijiapeng's Blog </title>
+  <title> LeetCode80:Remove Duplicates | shlijiapeng's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -143,7 +144,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,53 +245,199 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        随笔
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                LeetCode80:Remove Duplicates
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-02T19:39:30+08:00" content="2016-07-02">
+              2016-07-02
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/02/leetcode80/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/02/leetcode80/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>LeetCode 80<br><a id="more"></a></p>
+<pre><code>class Solution {
+public:
+    int removeDuplicates(vector&lt;int&gt;&amp; nums) {
+        //int nab= count(nums.begin(), nums.end(), nums[0]);
+        int num;
+        if (nums.size() % 2 == 0)    num = 0;
+        else num = 1;
+        vector&lt;int&gt; number(nums);
+        vector&lt;int&gt;::iterator iter = unique(nums.begin(), nums.end());
+        nums.erase(iter, nums.end());
 
-      <h1 class="post-title">
+        int  k = 0, n;
+        iter = number.begin();
+        //vector&lt;int&gt;::iterator it=nums.begin();
+        while (iter != number.end())
+        {
+            n = count(number.begin() + k, number.end(), number[k]);
+            if (n &gt;= 2) {
+                nums.insert(nums.begin() + num, number[k]);
+                num++;
+            }
+            num++;
+            k+=n;
+            iter += n;
+        }
+
+        return nums.size();
+    }
+};
+</code></pre><p>其实看到这题的时候，我是懵逼的。<br>首先我考虑要不要遍历数组，然后记录每个元素个数，考虑到数组已排序，所以按顺序处理元素就可以了。当元素个数超过两个时，就删去多余的。<br>可后来当时实现的时候，查资料查着查着觉得容器类方法和算法类很好用啊。</p>
+<p>经过数小时的debug，大致算法是这样的：首先，将vector<int>复制到另一个临时数组，然后将源数组去重。接下来检测临时数组，使用count函数，当发现元素个数大于两个时，在源数组相应位置插入一个元素就可以了。</int></p>
+<p>虽然我发现accept后，算法效率并不是最好的。</p>
+
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/06/11/mysuggestion/" itemprop="url">
-              
-                <span itemprop="name">如果现在让我给大一新生一些专业方面的意见</span>
-              
-            </a>
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-11T16:46:30+08:00"
-              content="2016-06-11" >
-          06-11
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LeetCode/" rel="tag">#LeetCode</a>
+          
+            <a href="/tags/算法/" rel="tag">#算法</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/28/whygiveupAndroid/" rel="next" title="最终还是没选择Android">
+                <i class="fa fa-chevron-left"></i> 最终还是没选择Android
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/07/02/leetcode80/"
+     data-title="LeetCode80:Remove Duplicates"
+     data-content=""
+     data-url="http://www.shlijiapeng.com/2016/07/02/leetcode80/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/02/leetcode80/"
+           data-title="LeetCode80:Remove Duplicates" data-url="http://www.shlijiapeng.com/2016/07/02/leetcode80/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -310,8 +457,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/image.jpg"
@@ -374,6 +530,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -489,6 +656,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

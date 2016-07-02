@@ -4,6 +4,45 @@
   
     
     <entry>
+      <title><![CDATA[LeetCode80:Remove Duplicates]]></title>
+      <url>http://www.shlijiapeng.com/2016/07/02/leetcode80/</url>
+      <content type="html"><![CDATA[<p>LeetCode 80<br><a id="more"></a></p>
+<pre><code>class Solution {
+public:
+    int removeDuplicates(vector&lt;int&gt;&amp; nums) {
+        //int nab= count(nums.begin(), nums.end(), nums[0]);
+        int num;
+        if (nums.size() % 2 == 0)    num = 0;
+        else num = 1;
+        vector&lt;int&gt; number(nums);
+        vector&lt;int&gt;::iterator iter = unique(nums.begin(), nums.end());
+        nums.erase(iter, nums.end());
+
+        int  k = 0, n;
+        iter = number.begin();
+        //vector&lt;int&gt;::iterator it=nums.begin();
+        while (iter != number.end())
+        {
+            n = count(number.begin() + k, number.end(), number[k]);
+            if (n &gt;= 2) {
+                nums.insert(nums.begin() + num, number[k]);
+                num++;
+            }
+            num++;
+            k+=n;
+            iter += n;
+        }
+
+        return nums.size();
+    }
+};
+</code></pre><p>其实看到这题的时候，我是懵逼的。<br>首先我考虑要不要遍历数组，然后记录每个元素个数，考虑到数组已排序，所以按顺序处理元素就可以了。当元素个数超过两个时，就删去多余的。<br>可后来当时实现的时候，查资料查着查着觉得容器类方法和算法类很好用啊。</p>
+<p>经过数小时的debug，大致算法是这样的：首先，将vector<int>复制到另一个临时数组，然后将源数组去重。接下来检测临时数组，使用count函数，当发现元素个数大于两个时，在源数组相应位置插入一个元素就可以了。</int></p>
+<p>虽然我发现accept后，算法效率并不是最好的。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[最终还是没选择Android]]></title>
       <url>http://www.shlijiapeng.com/2016/06/28/whygiveupAndroid/</url>
       <content type="html"><![CDATA[<p>睡前更新随便写一些。<br><a id="more"></a></p>
