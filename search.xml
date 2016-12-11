@@ -3,6 +3,482 @@
   
   
     
+    <entry>
+      <title><![CDATA[《现代操作系统》小结]]></title>
+      <url>http://www.shlijiapeng.com/2016/08/23/ModernOperatingSystem/</url>
+      <content type="html"><![CDATA[<p>其实也算是操作系统这方面的回顾吧，顺带复习一下。<br><a id="more"></a><br>还有一本书叫《操作系统概念》，我就瞄了几眼，感觉那本更好一点。不过也没细读过，所以也不敢太过武断。</p>
+<p>这本书看了前六章再加后面讲解Linux的那章。<br>直观感受是蛮枯燥难懂的，看得特别痛苦，很多新概念。不过也算是进了操作系统的大门。<br>最近在刷题，然后就有了不少真实的感受，也发现其实自己并没有吃透这本书。</p>
+<h4 id="一些细节的地方"><a href="#一些细节的地方" class="headerlink" title="一些细节的地方"></a>一些细节的地方</h4><p>主要的是，书中一些专业名词可能与看到的有出入。还有虽然介绍了一些方法，但并没有给出“<strong>**</strong>法”之类的概括性名字。<br>感觉这本书不是很上纲上线，就是不适合当教材的意思。因为很多教材就给出什么什么知识点，帮你分好类，方便你学习应试等等。但这书基本就是介绍，当然我估计这些什么什么法都是国内教材取的名字。</p>
+<p>1） 在I/O控制方面，书中只提到了程序控制IO/中断驱动IO/DMA IO，不过还有通道控制方式，这是书中没有介绍的。<br>2） 在书中，通常使用进程表项一词，不过在题中更常见PCB/程序控制块，后来发现原来指的都是同一个东西。但我觉得还是进程表项比较好理解，容易联想到进程表，进程控制块就有点云里雾里了。<br>3)  页面置换算法书中只是介绍提及，看其他人解答得知可以用二维图表来解决，从页面请求序列推算缺页次数的问题。<br>4） 文件系统中，有“顺序结构”/“链表结构”/“索引结构”一说，而在书中跟“连续分配”/“链表分配”/“在内存中采用表的链表分配”替代，而且还多了“i节点”这个分类。<br>5） 死锁检测书中并没有给出“资源分配图简化法”这个名字。<br>6） 死锁恢复一节中没有给出“剥夺资源法”这个名字。<br>7） 死锁预防一节中 6.6.2“破坏占有和等待条件” 其实就是资源静态分配法。<br>8） 操作系统的功能书中没有给出明确定义，应该为处理器管理（貌似叫做进程管理也行）/存储管理/文件管理/设备管理/作业管理。看到很多不同的说法，所以不是很确定。<br>    PS：所以说看英文原书是很有必要的，避免各类中文用词差异。<br>9） 进程调度中，抢占式调度/非抢占式调度和和剥夺式调度/非剥夺式调度是同一个意思。前者较常见。<br>10）书中未提及，处理器调度可分类为高级/中级/初级调度。高级调度是作业调度，大意是将作业从外存调度至内存，并分配资源。低级调度就是常见的进程调度。中级调度是将暂不需要运行的进程调度到外存，提高内存的利用率和系统吞吐量。功能完善的系统才会引入中级调度。<br>11）分时系统的4个特点：多路性/独立性/及时性/交互性，其中对于多用户分时系统而言交互性最为重要。<br>12）书中3.2节貌似就是分区存储管理，书中用了“地址空间”一词。分区存储管理又可以分为静态分区/可变分区/可重定位分区。<br>13) 虚拟存储好像也没说，这是一种将需要的段页放在内存，而不用的就放在外存中的技术。交换空间就是这种技术的实现。<br>14）高级调度中，作业的队列叫做后备队列。对应于PCB/进程控制块，有JCB/作业控制块。<br>15）进程的状态可以分为禁止就绪/活动就绪/静止睡眠/活动睡眠。</p>
+<h4 id="附一些不错的文章"><a href="#附一些不错的文章" class="headerlink" title="附一些不错的文章"></a>附一些不错的文章</h4><p>1）<a href="http://www.cnblogs.com/ChunJian-YANG/p/5506209.html" target="_blank" rel="external">进程、线程与处理器的调度</a></p>
+<p>随时更新。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[2016-08-20：最近的想法与计划]]></title>
+      <url>http://www.shlijiapeng.com/2016/08/20/2016-08-20/</url>
+      <content type="html"><![CDATA[<p>没想到刚好距离上次整整一个月。<br>8.22更新。<br><a id="more"></a></p>
+<p>今天又浪了大半天，忏悔。<br>总结一个重要的结论：书看再多没记住有个毛线用，有必要多刷刷题，再多做些实践。最近用的牛客网就蛮好的，然后我发现，果然有必要巩固知识。不过多项选择里出单项答案真的是够了。<br>要学的东西还蛮多，学过的东西还需巩固。真是艰难。<br>总之不能再这么浪了。好的就这样。</p>
+<p>————–分割线———–</p>
+<p>首先忏悔，最近太浪了。<br>其次，把一个月前的那篇关于计划的文章在CSDN上删了，感觉夹杂了太多私货，不大好。以后也准备写东西的时候，少一些太主观的情绪。<br>再纪念下，这是第一篇用emacs写的文章，我觉得蛮好的，真心。因为我自己就是用鼠标用得手指痛，早就想解放鼠标了。对于可能需要编辑大量文字的人来说，一款好用的编辑器必须要有一个啊。而且我手速也还行，学好个编辑器简直如鱼得水。</p>
+<p>最近在看《Unix环境高级编程》，看API特别枯燥，不过其中夹杂着很多实用知识，比如刚刚emacs的配置文件所有者id居然是root，这以后配置起来不是很麻烦，所以就全改成了自己的uid。争取早日读完。<br>看完这本后可能准备去看TCP/IP详解-卷1了，而且貌似还出了第二版，买书穷三代。。。<br>哎，有种计划很多，但实行缓慢的感觉。最近太浪了。</p>
+<p>emacs真好用，有机会再试试vim，说不定就叛变了。说起来word应该也有快捷键吧，不过linux上没有，就不考虑了。</p>
+<p>大概就这样。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[2016-7-20：最近一些想法与计划]]></title>
+      <url>http://www.shlijiapeng.com/2016/07/20/2016-7-20/</url>
+      <content type="html"><![CDATA[<p>一段时间没写了，记录一下最近的想法与计划。<br>7.26 更新。<br><a id="more"></a><br>7.26<br>7.26<br>《剑指offer》读了100多页，这书真心不错啊，提供了不少的思路与想法，一起买的《大话设计模式》直接退货了，实在没法看。特别是经历过读名著的痛苦天昏地暗之后，这类又不难懂又又干货的书真是良心啊。讲真，名著看起来昏天地暗啊，都什么鬼，然后我就发现，有不少还真会笔试面试。反正我看完，有很多顺手就忘了，慢慢巩固吧。。。<br>最近也关注了些考研的信息，拿来作为学习指导也是不错的…然后我发现计算机原理和体系结构果然还是蛮重要的吧。<br>有一个很严肃的问题，最近浪多了，这样不好……恩还有，如果事成的话，说不定几年后我的生活就是吃吃吃买买买玩玩玩和旅游了。。。这么说好像太萎靡了…反正休闲活动会多点不然太苦。。。<br>————————-分割线——————–<br>最近计算机原理/计算机网络/操作系统都已经学过了，这些知识目前缺乏练习与实战，所以前段时间也在刷刷题目，巩固一下。<br>可以作为接下来计划的目标有很多，比如设计模式/《剑指offer》/数据库/离散数学/概率论。<br>数据库我可能准备在学完离散数学和概率论之后再学了，最近感觉学好数学很有必要，虽然直到目前我的数学算是半荒废状态…<br>《剑指offer》之类我觉得现在准备太早了，毕竟还算是大二，起码也大三大四准备才差不多，当然前提是还回去把书读完。感觉可能的确有点干过头了，但是看着学历压制的人大一上就开始学栈了，又觉得心里苦。然而同学们那个时候还在干什么呢。还在学word/ppt/excel。又比如大四去实习，大三就要准备吧，可是，计算机网络要大四上才学？？？计算机网络不是基础吗？哎，学历的锅这辈子是摘不掉了。<br>昨天发现个大专生，自学计算机，6得不行。我觉得这事放在大专生身上我就佩服得不得了，放在985身上就再正常不过，哎。</p>
+<p>所以我得想想现在的目标究竟是什么。大概是首先巩固学完的知识，融会贯通。还是学学数学吧，算法也可以搞搞。<br>想来想去，貌似能学的有很多啊……<br>就这样吧。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[LeetCode80:Remove Duplicates]]></title>
+      <url>http://www.shlijiapeng.com/2016/07/02/leetcode80/</url>
+      <content type="html"><![CDATA[<p>LeetCode 80<br><a id="more"></a></p>
+<pre><code>class Solution {
+public:
+    int removeDuplicates(vector&lt;int&gt;&amp; nums) {
+        //int nab= count(nums.begin(), nums.end(), nums[0]);
+        int num;
+        if (nums.size() % 2 == 0)    num = 0;
+        else num = 1;
+        vector&lt;int&gt; number(nums);
+        vector&lt;int&gt;::iterator iter = unique(nums.begin(), nums.end());
+        nums.erase(iter, nums.end());
+
+        int  k = 0, n;
+        iter = number.begin();
+        //vector&lt;int&gt;::iterator it=nums.begin();
+        while (iter != number.end())
+        {
+            n = count(number.begin() + k, number.end(), number[k]);
+            if (n &gt;= 2) {
+                nums.insert(nums.begin() + num, number[k]);
+                num++;
+            }
+            num++;
+            k+=n;
+            iter += n;
+        }
+
+        return nums.size();
+    }
+};
+</code></pre><p>其实看到这题的时候，我是懵逼的。<br>首先我考虑要不要遍历数组，然后记录每个元素个数，考虑到数组已排序，所以按顺序处理元素就可以了。当元素个数超过两个时，就删去多余的。<br>可后来当时实现的时候，查资料查着查着觉得容器类方法和算法类很好用啊。</p>
+<p>经过数小时的debug，大致算法是这样的：首先，将vector<int>复制到另一个临时数组，然后将源数组去重。接下来检测临时数组，使用count函数，当发现元素个数大于两个时，在源数组相应位置插入一个元素就可以了。</int></p>
+<p>虽然我发现accept后，算法效率并不是最好的。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[最终还是没选择Android]]></title>
+      <url>http://www.shlijiapeng.com/2016/06/28/whygiveupAndroid/</url>
+      <content type="html"><![CDATA[<p>睡前更新随便写一些。<br><a id="more"></a></p>
+<p>最初选择Android的时候对于IT业界根本不了解，只是觉得移动开发很火，而且做出来APP都很酷炫，能够立马见到成果还方便展示。也有可能当初只知道APP开发吧，就把这个当做目标了。<br>其实直到最近之前还是。</p>
+<p>但最终我还是没选择Android开发。<br>首先，国内Android生态圈太混乱了！Google服务没有入华，导致Android APP质量参差不齐，没有保障，各种流氓APP等等在Android上拉低用户体验。<br>自己亲身的使用经历导致根本不想再用安卓，连用都不想用，更不要去说开发了。<br>其次，也可能有这个原因。机器人的调试经历导致我深深明白当程序的一部分不在自己的掌控之中时，那是多么痛苦的一件事！就比如机器人，硬件上的小毛病就是能导致你的程序不好弄不好调试，可你就是没办法。我也没深入了解Android开发，但是谁又说不准它也是呢。。。<br>也有一个原因，我不是很喜欢搞UI，反正就是不喜欢。。。没意思啊，花了老长时间去调整界面，不如在代码和算法的世界中有趣，233</p>
+<p>为什么不是iOS呢。<br>很简单。首先，开发成本大。又是MAC又是开发者账户。其次，iOS技术栈太孤立，距离主流技术太远。</p>
+<p>哦对了，可能没选移动开发还有个原因。因为太火了，培训班都遍地开花了，什么三个月教你学会iOS。感觉不是很舒服啊。。。可能我比较传统把。</p>
+<p>好点大概就这样了，睡觉咯。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[一些可以给大一新生的意见]]></title>
+      <url>http://www.shlijiapeng.com/2016/06/11/mysuggestion/</url>
+      <content type="html"><![CDATA[<p>保持平和，仍需努力。<br><a id="more"></a></p>
+<p>我刚大一的时候，大概有哪些计算机技能呢？很长时间的计算机使用经验，大概四千小时左右吧，虽然基本不是正事，但是时间上有着量的差距。最简单的例子就是盲打，时间积累所带来的收益让我在打字速度上已经超过很多同期同学，当然目前为止也是没机会见识更多厉害人物了。<br>时至今日，我学习了很多技能。先说语言类，以时间作为排序，Java/C/C++/C#/Python。当然基本都是熟练程度，完全不敢拿出手自称精通。然后是软件工程体系知识，列书名吧，《数据结构与算法分析》/《计算机科学导论》/《算法导论》/《计算机网络-第五版》/《现代操作系统》/《数据库系统概念》/《软件工程-第九版》。<br>然后是一些零碎技能，ubuntu/XML/正则表达式/markdown/git/hexo。<br>接下来的打算大概是一边找个好点的实习，看这几天事态发展。一边好好学习，可以的话是很想把英文和数学学好的，毕竟学渣，233。</p>
+<h4 id="计算机"><a href="#计算机" class="headerlink" title="计算机"></a>计算机</h4><p>说起来，第一次认真想从事计算机大概从小学就开始了。从小就好奇心旺盛，喜欢电子产品，经常拿着螺丝刀拆解报废电器，然后一次绘画班第一次见到了电脑，从那个生活就深深地想要从事计算机行业。然后四年级的时候跟着表哥进黑网吧，那也是算是人生第一次深入接触计算机了。那个时候买了两本计算机启蒙书，一本介绍windows，一本介绍计算机组装，后来也是差不多快翻烂了，现在大概还在抽屉里放着。<br>等到家里买了电脑以后，除了早期一段时间，后来就是无止境地与计算机为生了，毕竟网瘾少年=-=</p>
+<h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><p>说起来，为什么我大一之前就知道ubuntu了呢，那个时候一心想着要自己给HTC E8适配个MIUI系统，然后就看论坛教程说需要ubuntu系统，那大概就是我第一次接触linux了。<br>再后来，机器人社团里面导航模块的ros系统需要依赖ubuntu。这倒不是重点，重点是我从小爱折腾，iOS/Android到手第一时间都是越狱/root。所以这段时间也算是把ubuntu基础折腾熟悉了，什么多系统安装/修复引导/一些简易配置，都有所了解。</p>
+<h4 id="我的建议"><a href="#我的建议" class="headerlink" title="我的建议"></a>我的建议</h4><p>####选择<br>一定要尽早确定自己真正想要从事的方向，这是很重要的。目前IT行业大热，人才需求旺盛，所以培训班教学盛行，非科班出身也比较容易找到工作。但是我却觉得，他们并没有科班的沉淀，这也是此时此刻的我所担心和面临的问题，因为我的积淀还是太少了。<br>所以我觉得越早确定自己的方向越好，然后就在这个方向上努力，点满技能树。</p>
+<h5 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h5><p>我大一的时候基本就是在学语言，因为那个时候也没有完整的软件工程体系知识，所以也无从入手。现在感觉满后悔的，因为大一更多时候都在做无用功，学那么多语言有什么用呢？<br>所以，我觉得，语言只要学一门面向对象和一门脚本就够了，特别是面向对象，只要够深入就行，不要求数量，要精通。</p>
+<h5 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h5><p>基本是越早越好，因为这些基础知识是贯穿在各个地方的，你可能会在各种地方需要使用这些知识技能。而如果你早点学习的话，就可以一次次在实际使用中巩固，最终领悟。</p>
+<h6 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h6><p>因为现在是互联网时代，所以计算机网络基本是开发必备的知识，就比如TCP/IP和HTTP。</p>
+<h6 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h6><p>说起设计模式，我感觉蛮神奇的。因为在第一次知道这个概念之后，我一直把它当做一个单独的体系分支来对待，而在看过《软件工程》之后才知道原来这是它的一部分。不过说真的，设计模式真的很难懂很枯燥。</p>
+<h6 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h6><p>操作系统我倒觉得蛮有意思的，学过之后看待很多问题的角度都不一样了。编程的时候会考虑程序与操作系统的交互，平常使用操作系统的时候也会穿插着各种概念，像什么IO堵塞/缺页故障/虚拟内存，相对来说是蛮有意思的，还很实用。</p>
+<h6 id="计算机原理"><a href="#计算机原理" class="headerlink" title="计算机原理"></a>计算机原理</h6><p>CASPP我一直想好好读啊，可是实在是没有时间了，就读了两大章，我记得。我觉得这个也蛮有趣的，看个人兴趣。</p>
+<h5 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h5><p>学校教学基本是不够的，多靠自己，我觉得这点在大多数大学都是一样的。<br>然后计算机方面，国内教材大多不可靠，以我自己的经验来看，不仅可能有各种各样的错误，而且苦涩难懂/不得要点，事倍功半。<br>所以我还是很推荐国外经典教材的，就比如机械工业出版社的那些书。</p>
+<h3 id="好的，大概就这样啦。"><a href="#好的，大概就这样啦。" class="headerlink" title="好的，大概就这样啦。"></a>好的，大概就这样啦。</h3>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[回忆多项式解析运算思路]]></title>
+      <url>http://www.shlijiapeng.com/2016/05/24/poly/</url>
+      <content type="html"><![CDATA[<p>我觉得我编写这个多项式解析的过程中收获了很多，而且自己对成果也很满意，所以决定将过程与思路记录成博文。<br><a id="more"></a></p>
+<p><a href="https://github.com/shlijiapeng/Exercise/blob/master/Poly.cpp" target="_blank" rel="external">首先是完整代码段的Github地址。</a></p>
+<h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><pre><code>typedef struct poly{
+    int coe, ind;
+    struct poly *next;
+}Poly;
+</code></pre><p>一元多项式无非只有系数和指数，所以定义结构体，其中coe存放系数，ind存放指数，并采用单链表链接各节点。</p>
+<h3 id="文本解析"><a href="#文本解析" class="headerlink" title="文本解析"></a>文本解析</h3><p>文本解析方案当初找到了很多，最后决定采用正则表达式，一个是因为方便实用，一个是因为之前学习过正则表达式之后一直没实际使用过，正好借此机会熟悉熟悉。</p>
+<pre><code>regex pattern(&quot;(([+-]|^)\\d+[Xx]\\^\\d+)&quot;);
+
+regex pa(&quot;([+-]|^)(\\d+)([+-]|$)&quot;);
+string rep=&quot;$1$2x^0$3&quot;;
+
+//regex patt(&quot;([+-]|^)(\\d+)([Xx])([+-]|$)&quot;);
+//string replace=&quot;$1$2$3^1$4&quot;;
+regex patt(&quot;([Xx])([+-]|$)&quot;);
+string replace=&quot;$1^1$2&quot;;
+
+regex patter(&quot;([+-]|^)([Xx])&quot;);
+string re = &quot;$1$101$2$3&quot;;
+
+for (n = 0; n &lt; 2; n++){
+    cout &lt;&lt; &quot;请输入多项式:&quot;;
+    cin &gt;&gt; in;
+
+    in = regex_replace(in, patter, re);
+    //格式化字符串:x
+    in=regex_replace(in, patt, replace);
+
+    in = regex_replace(in, pa, rep);
+    //cout &lt;&lt; in &lt;&lt; endl;
+
+     for (std::sregex_iterator it(in.cbegin(), in.cend(), pattern), q; it != q; ++it){
+        //cout &lt;&lt; &quot;str: &quot; &lt;&lt; it-&gt;format(&quot;$1&quot;) &lt;&lt; &quot;\n&quot;;
+        //cout &lt;&lt; it-&gt;format(&quot;$1&quot;)[0];
+
+        ss&lt;&lt;it-&gt;format(&quot;$1&quot;);
+        if(it-&gt;format(&quot;$1&quot;)[0]==&apos;+&apos;||it-&gt;format(&quot;$1&quot;)[0] == &apos;-&apos;) ss&gt;&gt;c;
+        ss&gt;&gt;coe;
+        if(c==&apos;-&apos;) coe=-coe;
+        ss&gt;&gt;c;ss&gt;&gt;c;
+        ss&gt;&gt;ind;
+        //cout&lt;&lt;coe&lt;&lt;endl&lt;&lt;ind&lt;&lt;endl;
+        ss.clear();
+
+        Process(p,coe,ind);
+    }
+    //if(!IsExt()) p = (Poly*)malloc(sizeof(Poly));
+}
+</code></pre><p>首先要讲多项式格式化，类似于+/- a<em>b^c。特殊情况会有两种，第一种是多项式第一项会省略+号，第二种是系数为1的时候会省略系数。<br>而此处核心思路是利用()将匹配出的字符串其中的单个元组格式化，统一为+/- a</em>b^c的格式以方便运算。<br>格式化之后将字符串流输入变量ss，此处使用字符串流将结果步步提取，放入相对应的变量中。</p>
+<h3 id="多项式运算"><a href="#多项式运算" class="headerlink" title="多项式运算"></a>多项式运算</h3><pre><code>void Process(Poly *p,int coe,int ind){
+    Poly *q;
+    //不存在该指数
+    if(!IsExt(ind,p)) {
+        q = (Poly*)malloc(sizeof(Poly));
+        q-&gt;coe=coe;
+        q-&gt;ind=ind;
+        q-&gt;next=NULL;
+        while(p-&gt;next!=NULL) p=p-&gt;next;
+        p-&gt;next=q;
+    }
+    else{
+        q=p-&gt;next;
+        while(ind!=q-&gt;ind) q=q-&gt;next;
+        q-&gt;coe +=coe;
+    }
+}
+</code></pre><p>IsExt函数会检测在链表中是否已存在该指数的节点，若存在，则直接运算结果；若不存在，则建立新节点，并放入数据。</p>
+<h3 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h3><pre><code>void Dis(Poly *p){
+    Poly *q=p;
+    int num=0;
+    cout&lt;&lt;&quot;多项式结果为:&quot;;
+    for(q=q-&gt;next;q!=NULL;q=q-&gt;next){
+        if(q-&gt;coe!=0){
+            num++;
+            if(num&gt;1){
+                if(q-&gt;coe&lt;0) cout&lt;&lt;&quot;-&quot;;
+                else cout&lt;&lt;&quot;+&quot;;
+            }
+
+            if(abs(q-&gt;coe)!=1) cout&lt;&lt;abs(q-&gt;coe);
+            else if(q-&gt;ind==0) cout&lt;&lt;abs(q-&gt;coe);
+
+            if (q-&gt;ind == 1)
+                cout&lt;&lt;&quot;x&quot;;
+            else if(q-&gt;ind!=0)
+                cout &lt;&lt; &quot;x^&quot; &lt;&lt; q-&gt;ind;
+            //if (q-&gt;ind == 1)
+            //    cout &lt;&lt; abs(q-&gt;coe) &lt;&lt; &quot;x&quot;;
+            //else if (q-&gt;ind == 0)
+            //    cout &lt;&lt; abs(q-&gt;coe);
+            //else
+            //    cout &lt;&lt; abs(q-&gt;coe) &lt;&lt; &quot;x^&quot; &lt;&lt; q-&gt;ind;
+        }
+    }
+    if(num==0) cout&lt;&lt;0&lt;&lt;endl;
+}
+</code></pre><p>与解析模块恰恰相反，输出时需注意：<br>1）根据系数正负号输出+/-；若系数为0，则不输出该项<br>2）首项系数若为正数，则省略’+’号<br>3）若系数为1，则省略系数<br>4）若指数为1，不应输出系数符号与指数</p>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>排序模块中利用直接选择排序，将结果降序排列。</p>
+<p>以上大概就是我所编写的多项式运算程序的大致过程与中心想法。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Adafruit公司2015年最棒的开源可穿戴设备]]></title>
+      <url>http://www.shlijiapeng.com/2016/05/15/Adafruitswearablesof2015/</url>
+      <content type="html"><![CDATA[<p>一篇翻译，前段时间两天的劳动成果，虽然白忙了。<br>存货发完啦，下次更新时间就是未知数了。<br><a id="more"></a></p>
+<p><img src="https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/osdc-open-source-yearbook-lead9.png?itok=txmvl1Mq" alt=""></p>
+<p>可穿戴设备于过去一年中爆炸式增长。数不胜数的微型设备向市场推出，它们不仅仅是为了追踪健康状况，也为了调整日常姿势、提醒涂抹防晒霜、基于力传感器控制姿势，等等。由于依附于人体的技术相比以往更加无处不在，拥有开发可穿戴技术的开源工具更加重要，所以我们在维护生物识别数据隐私的同时创造了时尚技术的未来。</p>
+<p>Adafruit公司制造开源硬件、教程和源代码以让你创造你自己的DIY电子项目。以下是一些2015年我们最受欢迎的开源可穿戴产品和项目。</p>
+<h2 id="FLORA-v2（Adafruit-FLORA升级而来）"><a href="#FLORA-v2（Adafruit-FLORA升级而来）" class="headerlink" title="FLORA v2（Adafruit FLORA升级而来）"></a>FLORA v2（Adafruit FLORA升级而来）</h2><p><img src="https://opensource.com/sites/default/files/adafruitflorabookpack.jpg" alt=""></p>
+<p><a href="https://www.adafruit.com/products/659" target="_blank" rel="external">FLORA可穿戴单片机</a>今年获得了一次硬件升级，新增一个USB端口和支持色彩变换的集成可编程模块NeoPixel，同时其代码原生兼容Arduino。2015年我们也带来了《<a href="https://www.adafruit.com/products/1839" target="_blank" rel="external">上手Adafruit FLORA</a>》，一本面对初学者关于可穿戴单片机项目的导航书籍。</p>
+<p>此书覆盖了关于FLORA家族组成、工具和技术的基础知识，以及三个项目以让你上手，包括内置于衣服的开关、舞步激活的灯光和DIY GPS手表。<a href="https://www.adafruit.com/products/2404" target="_blank" rel="external">Flora书籍包</a>整合了书中所使用的部分用品，如需更多请到<a href="https://learn.adafruit.com/category/flora" target="_blank" rel="external">Adafruit学习系统-Flora教程</a>以开发其他开源项目。</p>
+<h2 id="FLORA和FONA组成的短信背包"><a href="#FLORA和FONA组成的短信背包" class="headerlink" title="FLORA和FONA组成的短信背包"></a>FLORA和FONA组成的短信背包</h2><p><a href="https://youtu.be/cUDo4xzv70E" target="_blank" rel="external">Flora + Fona SMSsenger bag</a></p>
+<p>最近一个采用FLORA的项目是短信背包—一个可寻址LED矩阵，它显示从FONA开源短信模块所接收的短信。开发无线通讯可穿戴设备是十分有趣、值得纪念的，并且可用于FONA和NeoPixels的Arduino开源库使得对于初学者、学生和爱好者来说更易上手创造个人区域网络可穿戴设备。</p>
+<h2 id="FLORA-Bluefruit-LE-模块（和Bluefruit-LE-Connect-for-iOS-Android）"><a href="#FLORA-Bluefruit-LE-模块（和Bluefruit-LE-Connect-for-iOS-Android）" class="headerlink" title="FLORA Bluefruit LE 模块（和Bluefruit LE Connect for iOS/Android）"></a>FLORA Bluefruit LE 模块（和Bluefruit LE Connect for iOS/Android）</h2><p><a href="https://youtu.be/vKRa42ZugG0" target="_blank" rel="external">Flora Wearable Bluefruit LE Module</a></p>
+<p>说起网络可穿戴设备，<a href="https://www.adafruit.com/products/2487" target="_blank" rel="external">FLORA Bluefruit LE</a>于2015年首次亮相。这款可缝纫低功耗蓝牙模块使得连接你的手机或平板电脑以获取控制更简单，例如，改变你裙子中LED的颜色，或者传输传感器数据到类似于adafruit.io的云服务器。构建于NordicnRF51822，因此FLORA Bluefruit LE模块也可用作隐藏键盘或者UriBeacon。Bluefruit开发板家族可与(同样<a href="https://github.com/adafruit?utf8%3D%25E2%259C%2593%26query%3Dbluefruit_le_connect" target="_blank" rel="external">开源的</a>)Adafruit Bluefruit LE Connect apps for <a href="https://play.google.com/store/apps/details?id=com.adafruit.bluefruit.le.connect" target="_blank" rel="external">Android</a> and <a href="https://itunes.apple.com/us/app/adafruit-bluefruit-le-connect/id830125974" target="_blank" rel="external">iOS</a>协同工作。</p>
+<h2 id="Zac-Posen与代码构成的裙子"><a href="#Zac-Posen与代码构成的裙子" class="headerlink" title="Zac Posen与代码构成的裙子"></a>Zac Posen与代码构成的裙子</h2><p><a href="https://youtu.be/rNtWlVP5qrs" target="_blank" rel="external">Dressed In Code:Light up the runway</a></p>
+<p>今年，谷歌主动与Zac Posen合作作为他们<a href="https://www.madewithcode.com/" target="_blank" rel="external">“用代码构成”</a>项目的一员来开发一款LED裙子，它栩栩如生的款式由世界各地女孩编写代码而成。Maddy Maxey帮助将裙子带向日常并在关于该项目的教学中将<a href="http://www.instructables.com/id/Make-a-Runway-Ready-Programmable-LED-Matrix-Dress/?ALLSTEPS&amp;sa=D&amp;usg=AFQjCNFA7DchWaPAdk8jA8aLO5gef9Rl0w" target="_blank" rel="external">其硬件构造文档化</a>（使用FLORA和NeoPixels），这些在<a href="https://blog.adafruit.com/2015/09/16/how-to-make-a-runway-ready-programmable-led-matrix-dress-zac_posen-madewithcode-thecrated-wearablewednesday/" target="_blank" rel="external">纽约时尚周的T台上首次亮相</a>。</p>
+<h2 id="Arduino-GEMMA"><a href="#Arduino-GEMMA" class="headerlink" title="Arduino GEMMA"></a>Arduino GEMMA</h2><p><img src="https://opensource.com/sites/default/files/arduinogemma.jpg" alt=""></p>
+<p>FLORA不是今年唯一一款升级的主板，它的小姐妹GEMMA新增一个USB端口、开关键，同时它的新蓝色堂兄初次亮相——<a href="https://www.arduino.cc/en/Main/ArduinoGemma" target="_blank" rel="external">官方Arduino GEMMA</a>。这款构建于ATtiny85单片机的微主板可以控制NeoPixels、读取简单传感器并且足够体积小、功耗低以轻松嵌入可穿戴设备。当你在<a href="https://www.adafruit.com/products/1222" target="_blank" rel="external">Adafruit</a>或者<a href="https://www.adafruit.com/products/2470" target="_blank" rel="external">Arduino</a>购得GEMMA v2时，官方合作伙伴为Arduino GEMMA提供了Arduino IDE、盒装包装和其他最好服务的原生支持。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Robot operating system]]></title>
+      <url>http://www.shlijiapeng.com/2016/05/13/ros/</url>
+      <content type="html"><![CDATA[<h1 id="Ros概述"><a href="#Ros概述" class="headerlink" title="Ros概述"></a>Ros概述</h1><h2 id="历史概述"><a href="#历史概述" class="headerlink" title="历史概述"></a>历史概述</h2><p>　　伴随科学技术发展，人工智能的需求日益增长，机器人领域也迅速发展，响应需求，Willow Garage公司于2010年发布了开源机器人操作系统Ros。<br>　　Ros英文全称为robot operating system。如其名，其主要用于硬件抽象描述、底层驱动程序管理、共用功能的执行、程序间的消息传递、程序发行包管理，具体表现如动态导航壁障、手臂抓取物品、图像识别等。作为开源系统，其汇集众多社区贡献者项目代码，遵循于BSD许可。<br><a id="more"></a></p>
+<h2 id="现状概述"><a href="#现状概述" class="headerlink" title="现状概述"></a>现状概述</h2><p>　　目前Ros已在机器人研究领域掀起热潮。以robocup大赛为例，国内许多参赛队伍机器人导航模块采用此系统。中科大“可佳”机器人曾于去年夺得国际赛冠军，不例外，他们也采用ros系统，可见ros潜力可观。 </p>
+<h1 id="Ros原理概述"><a href="#Ros原理概述" class="headerlink" title="Ros原理概述"></a>Ros原理概述</h1><h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><p>　　Ros文件系统主要以包为主，功能程序打包成包以模块形式独立运行。建立包时添加依赖、导入ros官方库或开源包，扩展程序功能模块。包通过CMake编译系统编译，可以在pakage.xml中自行定制编译细节。包的层次结构可见图1.</p>
+<p><center> <img src="http://img.blog.csdn.net/20151118155215448" alt="图１"><br>图1</center></p>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>　　堆是包的集合，它提供一个完整的功能。</p>
+<h2 id="计算图级"><a href="#计算图级" class="headerlink" title="计算图级"></a>计算图级</h2><h3 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h3><p>　　节点即为程序模块，可视作ros程序的基础组成模块。各个节点作为线程独立运行，执行不同操作，通过通讯传输数据。</p>
+<h3 id="消息"><a href="#消息" class="headerlink" title="消息"></a>消息</h3><p>　　节点之间通过消息通讯。消息所采用的数据结构既可以是C语言所支持的数据结构，也可以是ros内置的数据结构，如导航模块所需的geometry/Twist数据类型，更可以是自定义的数据结构。</p>
+<h3 id="话题"><a href="#话题" class="headerlink" title="话题"></a>话题</h3><p>　　消息通过发布/订阅的方式传播，节点发布消息到话题，另一节点订阅话题，即可以获取消息。可见图2.<br>　<center> <img src="http://img.blog.csdn.net/20151118155400364" alt="这里写图片描述"><br>图2</center></p>
+<h3 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h3><p>　　服务好比web服务器，采取请求/回应模式传输数据。相比于话题的广播式发布数据，服务节点通信信道是唯一的，也由此简化节点设计。</p>
+<h3 id="Actionlib"><a href="#Actionlib" class="headerlink" title="Actionlib"></a>Actionlib</h3><p>　　Actionlib实时反馈数据，支持高级数据处理与节点设计模式。</p>
+<h1 id="Ros安装"><a href="#Ros安装" class="headerlink" title="Ros安装"></a>Ros安装</h1><p>　　Ros推荐运行于ubuntu操作系统，安装方法可参照官网教程。<br>由于其对于图像处理有一定要求，所以计算棒、树莓派等简单计算机并不能胜任工作。</p>
+<h1 id="Ros简易指南"><a href="#Ros简易指南" class="headerlink" title="Ros简易指南"></a>Ros简易指南</h1><h2 id="工作空间"><a href="#工作空间" class="headerlink" title="工作空间"></a>工作空间</h2><p>　　创建工作空间以在其内创建软件包。</p>
+<h2 id="Rviz"><a href="#Rviz" class="headerlink" title="Rviz"></a>Rviz</h2><p>　　Ros可视化工具，将地图数据、激光数据、点云数据可视化表现。支持用户自行配置以及保存配置信息。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><pre><code>catkin_init_workspace：初始化工作空间
+catkin_make：编译软件包
+rospack find:寻找软件包
+roscore：运行ros内核
+rosrun:运行节点
+roslaunch：运行launch文件
+rostopic pub:发布消息至话题
+rosrun rqt…:rqt命令集提供一系列可视化工具
+</code></pre><h2 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h2><pre><code>geometry/Twist:包含线速度、角速度数据，用以下发底盘速度。
+sensor_msgs/Laser_scan：激光数据类型
+scansor_msgs/PointClouod:点云数据类型
+</code></pre><h2 id="Launch文件"><a href="#Launch文件" class="headerlink" title="Launch文件"></a>Launch文件</h2><p>　　Launch文件支持。其实际为xml所定义的格式化语言，通过launch文件，可以同时启动多个结点、读入参数等等。</p>
+<h1 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h1><h2 id="导航架构"><a href="#导航架构" class="headerlink" title="导航架构"></a>导航架构</h2><p>　　导航涉及底盘运动、实时避障等。其中又可分为坐标系系统、传感器模块、里程计模块、底盘控制、地图服务等。<br>　　要充分利用导航堆，需要合理配置各个模块，针对机器人硬件适配与优化。</p>
+<h2 id="Navigation-stack"><a href="#Navigation-stack" class="headerlink" title="Navigation stack"></a>Navigation stack</h2><h3 id="Global、Local"><a href="#Global、Local" class="headerlink" title="Global、Local"></a>Global、Local</h3><p>　　全局规划负责路径规划，本地规划则负责局部实时规划。<br>　　设定目标点后，全局负责规划路径，遇见障碍物或者局部地图产生变化时，本地负责分析并重新规划合理路径。</p>
+<h3 id="Costmap"><a href="#Costmap" class="headerlink" title="Costmap"></a>Costmap</h3><p>　　导航堆用costmap储存障碍物信息。</p>
+<h3 id="Recovery-behaviors"><a href="#Recovery-behaviors" class="headerlink" title="Recovery_behaviors"></a>Recovery_behaviors</h3><p>　　导航过程中难免产生误差，当导航模块计算得规划数据和实际数据存在误差，便会采取修复行为来修复tf坐标系数据。<br>　　修复行为可分为：rotate_recovery和clear_costmap_recovery。<br>    Rotate_recovery:旋转360度以清理costmap<br>    Clear_costmap_recovery:移动至原地点一定距离外借以清理costmap</p>
+<h3 id="Cmd-vel"><a href="#Cmd-vel" class="headerlink" title="Cmd_vel"></a>Cmd_vel</h3><p>　　导航模块下发速度时常用话题名。</p>
+<h3 id="Map-sever"><a href="#Map-sever" class="headerlink" title="Map_sever"></a>Map_sever</h3><p>　　地图服务采用像素点匹配模式，即实时数据和地图数据进行像素点匹配。因此，必要时可以使用photoshop修改地图，模拟障碍物信息。</p>
+<h3 id="Amcl"><a href="#Amcl" class="headerlink" title="Amcl"></a>Amcl</h3><p>　　机器人的二维移动概率定位系统。</p>
+<p><center> <img src="http://img.blog.csdn.net/20151118155432821" alt="这里写图片描述"><br>图3</center></p>
+<h2 id="Tf坐标系"><a href="#Tf坐标系" class="headerlink" title="Tf坐标系"></a>Tf坐标系</h2><p>　　机器人由各个组件组成，如激光、底盘、里程计、手臂。Ros中需要为各个组件建立独立坐标系，再通过tf系统转换各个坐标系，而base_link则作为坐标系中心。见图4<br> <img src="http://img.blog.csdn.net/20151118155459731" alt="这里写图片描述"><br>图4<br>　　建立tf树以建立合适的tf坐标系，可见图5。<br>　　各个独立坐标系通过tf树建立互相联系，tf坐标系既可为机器人定位，也可为各组件有序运动助力。<br>  <center> <img src="http://img.blog.csdn.net/20151118155522639" alt="这里写图片描述"><br>图5</center></p>
+<h2 id="传感器"><a href="#传感器" class="headerlink" title="传感器"></a>传感器</h2><h3 id="激光数据"><a href="#激光数据" class="headerlink" title="激光数据"></a>激光数据</h3><p>　　激光数据主要用于二维导航。所需传感器为激光，使用数据类型为senor_msgs/LaserScan。</p>
+<h3 id="点云数据"><a href="#点云数据" class="headerlink" title="点云数据"></a>点云数据</h3><p>　　点云提供三维世界数据，主要用于建立三维地图。Kinect等传感器支持点云数据输入，使用数据类型为senor_msgs/PointCloud。</p>
+<h2 id="底盘控制"><a href="#底盘控制" class="headerlink" title="底盘控制"></a>底盘控制</h2><p>　　底盘是机器人最重要的组件之一，运动控制器、里程计、电机等基础组件都包含在底盘中。而同时，若底盘不能够正常运作，上层许多功能都无法正常服务。<br>　　适配底盘也即是将cmd_vel数据类型转换成驱动器解析需求的数据类型，再由驱动器控制电机转动，完成底盘运动。</p>
+<h2 id="里程计"><a href="#里程计" class="headerlink" title="里程计"></a>里程计</h2><p>　　里程计返回里程数据，传递给里程计坐标系。</p>
+<h1 id="Pluginlib"><a href="#Pluginlib" class="headerlink" title="Pluginlib"></a>Pluginlib</h1><p>　　编写插件以配置nav core的修复行为，costmap误差较大时，合理采取修复行为以抵达目标点。</p>
+<h1 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h1><p>　　正确配置IDE，则可以在IDE中编写及调试ros程序。<br>　　c、c++推荐使用eclipse，python推荐使用pycharm。</p>
+<blockquote>
+<p>引用块内容<br><a href="http://blog.csdn.net/hcx25909/article/category/1191901" target="_blank" rel="external">http://blog.csdn.net/hcx25909/article/category/1191901</a><br><a href="http://blog.csdn.net/lanhuadechenmo" target="_blank" rel="external">http://blog.csdn.net/lanhuadechenmo</a><br>wiki.ros.org</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[C#概述]]></title>
+      <url>http://www.shlijiapeng.com/2016/05/12/Introductiontocsharp/</url>
+      <content type="html"><![CDATA[<p>选修课结课论文，写着玩玩。<br><a id="more"></a></p>
+<h2 id="面向对象程序设计概述"><a href="#面向对象程序设计概述" class="headerlink" title="面向对象程序设计概述"></a>面向对象程序设计概述</h2><h3 id="面向过程程序设计的来由"><a href="#面向过程程序设计的来由" class="headerlink" title="面向过程程序设计的来由"></a>面向过程程序设计的来由</h3><p>　　要解释面向对象程序设计，都应当将其与面向过程程序设计作对比。<br>　　面向过程程序设计往往是流程化的，以机械式思维来解决问题，同时要求程序员的思维模式偏向硬件，从机械的角度来考虑如何一步步解决问题。<br>然而随着计算机科学、网络以及信息技术的发展，这种编程思维越发力不从心。这意味着在开发大型软件项目时，面向过程程序设计往往显得力不从心，程序员不得不开发一个个模块来完成功能，代码复用率低下、研发周期长、软件工作效率低下等等。<br>　　因此为了适应现代社会对软件开发的更高需求，面向对象程序设计作为解决方案而兴起。<br>　　面向对象的核心思想为万物皆对象。这种思想十分接近于人类思维方式，而不像面向过程程序设计那样程序员不得不从机器的角度来思考问题。<br>　　同时面向对象导入了类与对象的思想。类就是特定拥有共同属性、特征的对象的集合，对象则是类的实例，它实现了类的属性、特征等等。这和现实世界中是非常贴近的，比如鸟可以作为一种类，而乌鸦和喜鹊都可以作为鸟类的对象，他们共同拥有鸟类的属性——翅膀、飞翔等等。然而它们之间却也有不同的属性，比如乌鸦拥有全黑的羽毛，而喜鹊却不是，这就涉及到继承与子类了。<br>　　由此，面向对象程序设计产生并且不断发展壮大，成为或不可缺的一部分。</p>
+<h3 id="典型的面向对象语言"><a href="#典型的面向对象语言" class="headerlink" title="典型的面向对象语言"></a>典型的面向对象语言</h3><p>　　Java/c#/Python等等。众多编程语言或者设计之初已支持面向对象特性，又或者后来在更新面向对象特性。而如今在高等编程中，掌握面向对象特性已经或不可缺，编程语言对于面向对象的支持度又决定了其性能。</p>
+<h3 id="面向对象编程语言的展望"><a href="#面向对象编程语言的展望" class="headerlink" title="面向对象编程语言的展望"></a>面向对象编程语言的展望</h3><p> 　　从目前来看，作为程序员必须掌握一门面向对象编程语言，同时IT界技术不断发展，类似于F#、Docker等技术不断涌出，以及互联网的风靡，不少程序员更加青睐于类似于javascript、java、python等对网络支持性良好的语言，然而这一切都脱离不了面向对象思想，因为万物皆对象。</p>
+<h2 id="面向对象特征"><a href="#面向对象特征" class="headerlink" title="面向对象特征"></a>面向对象特征</h2><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>　　在面向对象程序设计中有个重要概念——继承不得不提。同时其存在也极为增加了代码可重用性，简化了软件开发过程。<br>　　被继承的类成为父类、基类，继承的类成为子类、派生类。子类可以继承拥有权限的父类的变量、方法、访问器等等，然而在其基础上扩展类的定义。子类还可以重写和覆盖父类的方法，而这也是面向对象的多态性的体现。<br>　　首先由继承就可知存在访问修饰符，它们分别为internal、public、protected、private。</p>
+<pre><code>public：访问不受限制。
+protected：访问仅限于包含类或从包含类派生的类型。
+Internal：访问仅限于当前程序集。
+protected internal：访问仅限于当前程序集或从包含类派生的类型。
+private：访问仅限于包含类型。
+其中还有特殊的两类：sealed和virtual。
+Sealed所修饰的类无法作为基类被继承。
+Virtual可用于修饰需要被重写的方法等等。
+</code></pre><p>　　接下来用一些C#示例来说明继承特性。</p>
+<pre><code>namespace temp
+{
+    class animalClass
+    {
+        public class animal
+        {
+            public int number;
+            int Number
+            {
+                set { this.number = value; }
+                get { return this.number; }
+            }
+
+        public animal(int num)
+        {
+            this.number = num;
+            Console.WriteLine(&quot;Create animal&quot;);
+        }
+
+        public void animfun()
+        {
+            Console.WriteLine(&quot;Function of animal&quot;);
+            Console.WriteLine(&quot;Number of animal is {0}&quot;, number);
+        }
+
+        virtual public void virtualfun()
+        {
+            Console.WriteLine(&quot;Don&apos;t do it!&quot;);
+        }
+    }
+
+    public class bird:animal
+    {
+        public string colour;
+        string Colour
+        {
+            set { this.colour = value; }
+            get { return this.colour; }
+        }
+
+        public bird(int num,string col):base(num)
+        {
+            this.colour=col;
+        }
+
+        public void birdfun()
+        {
+            Console.WriteLine(&quot;Function of bird&quot;);
+            Console.WriteLine(&quot;number of bird is {0} and colour of bird is {1}&quot;, number, colour);
+        }
+
+        public override void virtualfun()
+        {
+            Console.WriteLine(&quot;Change it!&quot;);
+        }
+    }
+}
+</code></pre><p>}</p>
+<p>　　以上为animal和bird的定义。</p>
+<pre><code>namespace temp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            animalClass.bird bir = new animalClass.bird(19, &quot;blue&quot;);
+            bir.birdfun();
+        }
+    }
+}
+</code></pre><p>　　如上实例化bird类的对象bir之后在调用birdfun可得结果：</p>
+<pre><code>Create animal
+Function of bird
+number of bird is 19 and colour of bird is blue
+</code></pre><p>　　可见bird类的确继承了来自animal类的number字段并且拥有了自己的属性——用于储存colcur的字符串。同时可以调用animal类的animfun函数和bird类的birdfun函数。</p>
+<h3 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h3><p>　　面向对象程序设计用经常涉及子类继承父类，就如乌鸦是鸟类的一个对象一样，鸟类抽象出了乌鸦和喜鹊共同的属性。同时由此我们可以引入面向对象中的另一个概念——抽象。</p>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><p>　　在C#中接口就是抽象的一种，它可以要求继承自其的类必须实现其中的方法，提供一种统一的标准来实现类。</p>
+<pre><code>namespace temp
+{
+    public interface Interface1
+    {
+        void fun();
+    }
+}
+</code></pre><p>　　示例中定义一个名为Interface1的接口，其中它要求实现无返回值的fun方法。</p>
+<pre><code>namespace temp
+{
+    class fromInterface1 :Interface1
+    {
+        public void fun()
+        {
+            Console.WriteLine(&quot;This is fun&quot;);
+        }
+    }
+}
+</code></pre><p>　　类fromInterface1则继承自Interface1，因此倘若不实现fun方法，编译器就会报错。如：error CS0535: “temp.fromInterface1”不实现接口成员“temp.Interface1.fun()”。</p>
+<h4 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h4><p>C#中抽象还有另一种实现方式——抽象类以及抽象方法。</p>
+<pre><code>namespace temp
+{
+    class @abstract
+    {
+        abstract class num1
+        {
+            abstract public void fun();
+        }
+
+        class num2 : num1
+        {
+            public override void fun()
+            {
+                Console.WriteLine(&quot;Do it!&quot;);
+            }
+        }
+    }
+}
+</code></pre><p>　　同继承自抽象接口，子类继承抽象类中的抽象方法时，必须重写抽象方法，否则编译器会报错，无法通过编译。<br>　　同时抽象类也有着其特征，不能从抽象类实例化对象，同时子类也必须实现抽象类中所有抽象方法。如同示例中所示范，用关键词override来重写抽象方法。</p>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>　　多态是一种面向对象程序设计中的概念。多态为程序设计提供了灵活性、变通性与多样性。<br>　　在C#中多态可以体现为函数重载、抽象类、重写函数。</p>
+<h4 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h4><pre><code>class simpleSample
+{
+    public simpleSample(int n)
+    {
+        Console.WriteLine(&quot;Create simpleSample and this is 1&quot;);
+    }
+
+    public simpleSample(int n,int m)
+    {
+        Console.WriteLine(&quot;Create simpleSample and this is 2&quot;);
+    }
+}
+</code></pre><p>　　当以语句simpleSample sam = new simpleSample(1)实例化时，输出Create simpleSample and this is 1<br>　　当以语句simpleSample sam = new simpleSample(1,2)实例化时，输出Create simpleSample and this is 2<br>　　可见相同的函数，当调用时传入参数不同时，可以完成不同的功能，这就是函数重载。</p>
+<h4 id="抽象类-1"><a href="#抽象类-1" class="headerlink" title="抽象类"></a>抽象类</h4><p>　　重写函数在抽象一节中已经出现示例。只有用virtual、abstract、override定义的函数才能重写。通过重写函数、继承抽象类，可以以相同的函数、形式完成不同的功能，这就是多态的本质之一。<br>　　多态为面向对象程序设计重要特性之一，也即同一操作作用于不同的对象，可以有不同的解释，产生不同的执行结果。</p>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>　　封装的定义为隐藏对象的属性和实现细节，仅对外公开接口，控制在程序中属性的读取和修改的访问级别。</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>　　在C#中可以用属性对进行封装。属性可以分为get和set访问器，由此可以将字段设置为可读、可写或可读写，同时不仅如此，还可在访问器中进行操作来完成需求。<br>    定义如下：</p>
+<pre><code>class simpleSample2
+{
+    public int number;
+    public int Number
+    {
+        get{return this.number;}
+        set { this.number = value; }
+    }
+
+public int number2;
+public int Number2
+{
+    set { this.number2 = value + 1; }
+    get {return this.number2;}
+}
+
+public simpleSample2()
+{
+    Console.WriteLine(&quot;Create simpleSample2&quot;);
+}
+</code></pre><p>}<br>　　主程序如下：</p>
+<pre><code>    simpleSample2 sam = new simpleSample2();
+    sam.Number = 1;
+    sam.Number2 = 1;
+Console.WriteLine(&quot;number={0} and number2={1}&quot;, sam.number, sam.number2);
+</code></pre><p>　　结果如下：</p>
+<pre><code>Create simpleSample2
+number=1 and number2=2
+</code></pre><p>　　可见通过set访问器可在访问字段时进行操作，同时通过设置读写权限完成封装操作。</p>
+<h4 id="接口和权限修饰符"><a href="#接口和权限修饰符" class="headerlink" title="接口和权限修饰符"></a>接口和权限修饰符</h4><p>　　封装就是对代码、程序进行保护。通过权限修饰符保护代码的可访问性，再提供接口，用户在不清楚实现细节的基础上就可以使用代码，完成了封装效果。<br>　　具体过程一般就是从类中抽象出函数原型再组成C#中Interface，就完成了提供接口。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://www.shlijiapeng.com/2016/05/12/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    </entry>
+    
   
   
 </search>
